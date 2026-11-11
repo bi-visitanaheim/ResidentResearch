@@ -14,6 +14,7 @@ Only aggregate results are included. Respondent-level files and vendor decks are
 2. Run `pipeline/run_all.sh`. It rebuilds `resident_sentiment.db`, `facts.csv` and `ask_facts.csv` from scratch.
 3. Run the data quality audit on the new wave.
 4. Rebuild `dashboard/data.js` from the new CSVs and commit. Vercel redeploys automatically.
+5. **Refresh the Overview GIF** (`dashboard/resident-sentiment-2026.gif`). It is a static snapshot (data pulled Nov 10, 2026) and does not update with `data.js`. Update the 20-second clip with the new figures (vendor-reported significant changes only), re-export the GIF, replace the file, and update its alt text, caption and `data-snapshot` date in `dashboard/index.html` (look for "BI REFRESH FLAG").
 
 Powered by Visit Anaheim Business Intelligence Team.
 
@@ -25,3 +26,7 @@ Powered by Visit Anaheim Business Intelligence Team.
 - `data/`: reference database (`resident_sentiment.db`) and searchable facts.
 - `pipeline/voices/`: coding rules and scripts for the written answers; `pipeline/build_dashboard_datasets.py` builds the summary and comparison tables.
 - No respondent-level records or vendor source files are included.
+
+## Update: Nov 11, 2026 (GIF)
+
+- Overview > Summary: added the 20-second animated summary GIF (`dashboard/resident-sentiment-2026.gif`) under the headline, with alt text and source caption; excluded from PDF export. Flagged for refresh on every new data pull (README step 5). No data values changed.
