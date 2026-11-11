@@ -31,3 +31,4 @@ Powered by Visit Anaheim Business Intelligence Team.
 
 - Overview: added the 20-second animated summary GIF (`dashboard/resident-sentiment-2026.gif`) under the headline, with alt text and source caption; excluded from PDF export. Flagged for refresh on every new data pull (README step 5). No data values changed.
 - Moved the GIF to its own Overview page, "Animated summary" (after Summary), shown larger; the Summary page is text and numbers only again.
+- Animated summary page: "Hide animation / Show animation" button (remembered per browser) and "Download GIF" button (saves visit-anaheim-resident-sentiment-<snapshot date>.gif).

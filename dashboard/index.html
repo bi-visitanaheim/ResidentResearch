@@ -296,6 +296,8 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     <div class="rs-block" id="animated-summary">
       <h2 class="rs-h3">Animated summary</h2>
       <p class="rs-cap">What residents told us in 20 seconds: the changes the survey vendor reports as significant in each city's latest wave.</p>
+      <div class="rs-giftools" id="gif-tools" data-pdf-skip style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 6px;"><button type="button" class="rs-pdfbtn ghost" id="gif-toggle" aria-controls="overview-video" aria-pressed="false">Hide animation</button><button type="button" class="rs-pdfbtn" id="gif-download">Download GIF</button><span class="rs-pdfstat" id="gif-stat" role="status" aria-live="polite"></span></div>
+      <p class="rs-cap" id="gif-hidden-note" hidden>Animation hidden. Select Show animation to view it again.</p>
       <!-- BI REFRESH FLAG: This GIF is a static snapshot (data pulled 2026-11-10: Anaheim W4, Garden Grove W2). It does NOT update automatically. On every new data pull / new wave: (1) update the Motion clip from the cumulative KPI table, (2) re-export the GIF and replace dashboard/resident-sentiment-2026.gif, (3) update the alt text, caption and data-snapshot date below, (4) commit and push. See README "Updating when a new wave arrives". -->
       <figure class="rs-video" id="overview-video" data-pdf-skip data-refresh-on-new-wave="true" data-snapshot="2026-11-10" style="margin:12px 0 0;padding:0;">
         <img src="resident-sentiment-2026.gif" width="640" height="360" style="display:block;width:100%;max-width:1280px;height:auto;border-radius:8px;" alt="Animated summary, What residents told us: 197 Anaheim and 100 Garden Grove residents surveyed in October 2026. Anaheim Wave 4 vs Wave 3: positive about tourism 69% to 78%, aware of Visit Anaheim 64% to 71%, aware of resident benefits 43% to 56%. Garden Grove Wave 2 vs Wave 1: tourism benefits me and my family 51% to 76%, aware of Visit Anaheim 85% to 68%, used Visit Anaheim communications 71% to 23%. Would appreciate resident discounts: Anaheim 83%, Garden Grove 91%.">
@@ -1593,6 +1595,43 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
 <script src="voices.js"></script>
 <script src="insights.js"></script>
 <script src="decide.js"></script>
+<script>
+/* Animated summary: hide/show and download the GIF */
+(function () {
+  const fig = document.getElementById('overview-video'), img = fig && fig.querySelector('img');
+  const tg = document.getElementById('gif-toggle'), dl = document.getElementById('gif-download');
+  const note = document.getElementById('gif-hidden-note'), stat = document.getElementById('gif-stat');
+  if (!fig || !img || !tg || !dl) return;
+  const KEY = 'rs-gif-hidden', say = (t) => { stat.textContent = t; };
+  function set(hide) {
+    fig.hidden = hide; note.hidden = !hide;
+    tg.textContent = hide ? 'Show animation' : 'Hide animation';
+    tg.setAttribute('aria-pressed', hide ? 'true' : 'false');
+    try { localStorage.setItem(KEY, hide ? '1' : '0'); } catch (e) {}
+  }
+  let start = false; try { start = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  set(start);
+  tg.addEventListener('click', () => { set(!fig.hidden); say(''); });
+  let downloads = null;
+  const ready = (async () => { try { downloads = (window.claude && window.claude.use) ? await window.claude.use('downloads') : null; } catch (e) { downloads = null; } })();
+  const NAME = 'visit-anaheim-resident-sentiment-' + (fig.getAttribute('data-snapshot') || 'summary') + '.gif';
+  dl.addEventListener('click', async () => {
+    say('Preparing download…');
+    try {
+      const blob = await (await fetch(img.currentSrc || img.src)).blob();
+      await ready;
+      if (downloads) {
+        try { await downloads.save({filename: NAME, data: blob}); say('Saved ' + NAME + '.'); }
+        catch (e) { say(e && e.code === 'declined' ? 'Download cancelled.' : 'Download did not complete. Please try again.'); }
+        return;
+      }
+      const u = URL.createObjectURL(blob), a = document.createElement('a');
+      a.href = u; a.download = NAME; document.body.append(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(u), 4000); say('Saved ' + NAME + '.');
+    } catch (e) { say('Download did not complete. Please try again.'); }
+  });
+})();
+</script>
 <script src="side.js"></script>
 
 </div></body></html>
