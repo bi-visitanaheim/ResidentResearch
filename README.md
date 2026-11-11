@@ -16,3 +16,12 @@ Only aggregate results are included. Respondent-level files and vendor decks are
 4. Rebuild `dashboard/data.js` from the new CSVs and commit. Vercel redeploys automatically.
 
 Powered by Visit Anaheim Business Intelligence Team.
+
+## Update: Nov 11, 2026
+
+- Dashboard: side menu, click any chart for the selected value in words, new "In residents' own words" section (theme analysis of 786 written answers and a word meaning chart), summaries of views that go together and opportunities (both cities, Anaheim, Garden Grove), and an interactive "Respond and decide" page in the Decision guide.
+- Only vendor-reported significance is shown. Margins of error were removed (they were not in any vendor report). Formulas behind every worked-out number are in Methodology and notes > Formulas.
+- `records/`: wave register, question crosswalk, cumulative KPI table, data quality audit, written-answer themes, quotes, word data and insights (aggregate only).
+- `data/`: reference database (`resident_sentiment.db`) and searchable facts.
+- `pipeline/voices/`: coding rules and scripts for the written answers; `pipeline/build_dashboard_datasets.py` builds the summary and comparison tables.
+- No respondent-level records or vendor source files are included.

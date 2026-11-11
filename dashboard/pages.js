@@ -1,7 +1,7 @@
 /* ===== One question per page: sub-pages, page strip and sticky page bar (OCVIBE pattern) ===== */
 (function () {
-  const SECS = ['overview', 'anaheim', 'gardengrove', 'both', 'every', 'decision', 'compare', 'methods', 'table', 'ask'];
-  const NAME = {overview: 'Overview', anaheim: 'Anaheim', gardengrove: 'Garden Grove', both: 'Both cities', every: 'Every question', decision: 'Decision guide', compare: 'City comparison', methods: 'Methodology and notes', table: 'Data table', ask: 'Ask the data', detail: 'KPI summary'};
+  const SECS = ['overview', 'voices', 'anaheim', 'gardengrove', 'both', 'every', 'decision', 'compare', 'methods', 'table', 'ask'];
+  const NAME = {overview: 'Overview', voices: "In residents' own words", anaheim: 'Anaheim', gardengrove: 'Garden Grove', both: 'Both cities', every: 'Every question', decision: 'Decision guide', compare: 'City comparison', methods: 'Methodology and notes', table: 'Data table', ask: 'Ask the data', detail: 'KPI summary'};
   const SUB = {};
   let scrollAll = false, sync = () => {};
   const subsOf = (id) => Array.from(document.querySelectorAll('#' + id + ' > .rs-sub'));

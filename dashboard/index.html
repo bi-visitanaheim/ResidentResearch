@@ -14,6 +14,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
 <script src="d3.min.js"></script><script src="data.js"></script><script src="runtime.js"></script>
 </head><body><div id="dash-root">
 <link rel="stylesheet" href="font-350.css"><link rel="stylesheet" href="font-600.css"><link rel="stylesheet" href="font-700.css"><link rel="stylesheet" href="font-750.css"><link rel="stylesheet" href="font-900.css">
+<link rel="stylesheet" href="v7.css">
 <style>
 .rs{font-family:var(--font-anthropic-sans);color:var(--color-fg);font-size:var(--cds-font-size-body);line-height:1.45;display:flex;flex-direction:column;gap:var(--cds-gap-lg)}
 .rs *{box-sizing:border-box}
@@ -249,6 +250,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
 
   <nav class="rs-tabs" role="tablist" aria-label="Dashboard sections">
     <button type="button" role="tab" data-tab="overview" aria-selected="true">Overview</button>
+    <button type="button" role="tab" data-tab="voices" aria-selected="false">In residents' own words</button>
     <button type="button" role="tab" data-tab="anaheim" aria-selected="false">Anaheim</button>
     <button type="button" role="tab" data-tab="gardengrove" aria-selected="false">Garden Grove</button>
     <button type="button" role="tab" data-tab="both" aria-selected="false">Both cities</button>
@@ -260,6 +262,9 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     <button type="button" role="tab" data-tab="ask" aria-selected="false">Ask the data</button>
   </nav>
 
+  <div class="rs-layout">
+  <aside class="rs-side" data-draw="side" data-pdf-skip aria-label="Section menu"></aside>
+  <div class="rs-main">
   <!-- ===================== OVERVIEW ===================== -->
   <section class="rs-page" id="overview" role="tabpanel">
     <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Overview"><button type="button" class="rs-subchip" data-subgo="overview-p1">Summary</button><button type="button" class="rs-subchip" data-subgo="overview-p2">Key questions</button><button type="button" class="rs-subchip" data-subgo="overview-p3">Anaheim KPIs</button><button type="button" class="rs-subchip" data-subgo="overview-p4">Garden Grove KPIs</button></nav>
@@ -292,13 +297,13 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       <h2 class="rs-h3">Key questions and short answers</h2>
       <p class="rs-cap">The main questions this study answers. Select a question to see the full answer, charts and the cards behind it.</p>
       <div class="rs-qa">
-        <div class="rs-qa-row"><p class="rs-qa-q"><span class="rs-qa-city">Anaheim</span>Is Visit Anaheim better known among residents?</p><p class="rs-qa-a">Yes, directionally: awareness reached <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=va_aware">—</span>%</span> from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-BL&amp;kpi_id=va_aware">—</span>%</span> at Baseline, a four-wave high, though a standard 95% test does not confirm the gain.</p><button type="button" class="rs-go" data-goto="anaheim" data-target="q-a1">See answer</button></div>
+        <div class="rs-qa-row"><p class="rs-qa-q"><span class="rs-qa-city">Anaheim</span>Is Visit Anaheim better known among residents?</p><p class="rs-qa-a">Yes: awareness reached <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=va_aware">—</span>%</span> from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-BL&amp;kpi_id=va_aware">—</span>%</span> at Baseline, a four-wave high. The vendor reports the gain from Wave 3 as significant.</p><button type="button" class="rs-go" data-goto="anaheim" data-target="q-a1">See answer</button></div>
         <div class="rs-qa-row"><p class="rs-qa-q"><span class="rs-qa-city">Anaheim</span>Has tourism sentiment improved?</p><p class="rs-qa-a">Yes: <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=tour_sent">—</span>%</span> like or love tourism, a significant <span class="rs-num"><span data-draw="v" data-fmt="signed" data-source="kpis" data-field="chg_vs_baseline_pts" data-where="wave_id=ANA-W4&amp;kpi_id=tour_sent">—</span> pts</span> since Baseline.</p><button type="button" class="rs-go" data-goto="anaheim" data-target="q-a2">See answer</button></div>
         <div class="rs-qa-row"><p class="rs-qa-q"><span class="rs-qa-city">Anaheim</span>Do residents feel tourism benefits them personally?</p><p class="rs-qa-a">About six in ten, unchanged: <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=personal">—</span>%</span> in Wave 4 against <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-BL&amp;kpi_id=personal">—</span>%</span> at Baseline.</p><button type="button" class="rs-go" data-goto="anaheim" data-target="q-a3">See answer</button></div>
         <div class="rs-qa-row"><p class="rs-qa-q"><span class="rs-qa-city">Anaheim</span>Do residents feel the city values them over visitors?</p><p class="rs-qa-a">Fewer than half: <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=values_res">—</span>%</span>, down significantly from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-BL&amp;kpi_id=values_res">—</span>%</span> at Baseline.</p><button type="button" class="rs-go" data-goto="anaheim" data-target="q-a4">See answer</button></div>
         <div class="rs-qa-row"><p class="rs-qa-q"><span class="rs-qa-city">Anaheim · next step</span>How can we show tourism investment reaching residents?</p><p class="rs-qa-a">Build on rising awareness of benefits (<span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=ben_aware">—</span>%</span>) and close the gap on tangible ones: only <span class="rs-num"><span data-draw="v" data-source="items" data-field="pct" data-where="row_id=impacts|ANA-W4|Reduced taxes for residents">—</span>%</span> know of reduced resident taxes.</p><button type="button" class="rs-go" data-goto="anaheim" data-target="q-a5">See answer</button></div>
         <div class="rs-qa-row"><p class="rs-qa-q"><span class="rs-qa-city">Garden Grove</span>Did positive sentiment hold?</p><p class="rs-qa-a">Yes: <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=city_sent">—</span>%</span> like or love Garden Grove, against <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W1&amp;kpi_id=city_sent">—</span>%</span> in Wave 1.</p><button type="button" class="rs-go" data-goto="gardengrove" data-target="q-g1">See answer</button></div>
-        <div class="rs-qa-row"><p class="rs-qa-q"><span class="rs-qa-city">Garden Grove</span>Do residents feel tourism benefits them?</p><p class="rs-qa-a">Many more do: <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=personal">—</span>%</span> from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W1&amp;kpi_id=personal">—</span>%</span>, beyond the margin of error.</p><button type="button" class="rs-go" data-goto="gardengrove" data-target="q-g2">See answer</button></div>
+        <div class="rs-qa-row"><p class="rs-qa-q"><span class="rs-qa-city">Garden Grove</span>Do residents feel tourism benefits them?</p><p class="rs-qa-a">Many more do: <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=personal">—</span>%</span> from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W1&amp;kpi_id=personal">—</span>%</span>, a change the vendor reports as significant.</p><button type="button" class="rs-go" data-goto="gardengrove" data-target="q-g2">See answer</button></div>
         <div class="rs-qa-row"><p class="rs-qa-q"><span class="rs-qa-city">Garden Grove</span>What happened to Visit Anaheim awareness and favorability?</p><p class="rs-qa-a">Both fell significantly: awareness <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W1&amp;kpi_id=va_aware">—</span>%</span> to <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=va_aware">—</span>%</span>, favorability <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W1&amp;kpi_id=va_sent">—</span>%</span> to <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=va_sent">—</span>%</span>.</p><button type="button" class="rs-go" data-goto="gardengrove" data-target="q-g3">See answer</button></div>
         <div class="rs-qa-row"><p class="rs-qa-q"><span class="rs-qa-city">Garden Grove · next step</span>How do we rebuild visibility and reconnect residents with local offerings?</p><p class="rs-qa-a">Meet residents on social media (<span class="rs-num"><span data-draw="v" data-source="needs" data-field="pct" data-where="row_id=Pref|GG-W2|Social media">—</span>%</span>), word of mouth (<span class="rs-num"><span data-draw="v" data-source="needs" data-field="pct" data-where="row_id=Pref|GG-W2|Word of mouth">—</span>%</span>) and email (<span class="rs-num"><span data-draw="v" data-source="needs" data-field="pct" data-where="row_id=Pref|GG-W2|Email">—</span>%</span>), and ease the top barrier, lack of free time (<span class="rs-num"><span data-draw="v" data-source="needs" data-field="pct" data-where="row_id=Barr|GG-W2|Lack of free time">—</span>%</span>).</p><button type="button" class="rs-go" data-goto="gardengrove" data-target="q-g4">See answer</button></div>
         <div class="rs-qa-row"><p class="rs-qa-q"><span class="rs-qa-city">Both cities</span>What do residents want?</p><p class="rs-qa-a">Resident value and relevant information: <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=discounts">—</span>%</span> (Anaheim) and <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=discounts">—</span>%</span> (Garden Grove) would appreciate resident discounts.</p><button type="button" class="rs-go" data-goto="both" data-target="q-b1">See answer</button></div>
@@ -318,9 +323,116 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       <div class="rs-cityhead"><span class="rs-sw" data-draw="sw1"></span><h2 class="rs-h3">Garden Grove · Wave 2 (Oct 2026)</h2><span class="rs-cap">Change vs Wave 1 (May 2026), the Garden Grove baseline. Select a card for its summary.</span></div>
       <div class="rs-cards" data-draw="cards" data-wave="GG-W2"></div>
     </div>
-    <p class="rs-cap">Values are top-2-box or % yes, unweighted. "Significant (vendor)" is the vendor's own flag; "BI test" is a two-tailed two-proportion test at 95% run by Visit Anaheim BI.</p>
+    <p class="rs-cap">Values are top-2-box or % yes, unweighted, as published. "Significant" marks a change the vendor reports as significant. Changes are differences in points between waves (Formula F1 in Methodology and notes).</p>
     </div>
-    <div class="rs-upnext" data-pdf-skip><span class="un-k">Up next</span><p class="un-p">Every Anaheim KPI across four waves, with what changed and why it matters.</p><button type="button" class="un-b" data-goto="anaheim" data-target="anaheim">Anaheim →</button></div>
+    <div class="rs-upnext" data-pdf-skip><span class="un-k">Up next</span><p class="un-p">What residents wrote, in their own words.</p><button type="button" class="un-b" data-goto="voices" data-target="voices">In residents' own words →</button></div>
+  </section>
+
+  <!-- ===================== IN RESIDENTS' OWN WORDS ===================== -->
+  <section class="rs-page" id="voices" role="tabpanel" hidden>
+    <div class="rs-block"><h2 class="rs-h2">In residents' own words</h2><p class="rs-cap">What residents wrote when the survey asked open questions: Anaheim Wave 4 (one question) and Garden Grove Wave 2 (eight questions). Select any bar, cell or word to see the numbers and the answers behind it.</p></div>
+    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in In residents' own words"><button type="button" class="rs-subchip" data-subgo="voices-p1">What residents are telling us</button><button type="button" class="rs-subchip" data-subgo="voices-p2">Themes across questions</button><button type="button" class="rs-subchip" data-subgo="voices-p3">Word meaning chart</button><button type="button" class="rs-subchip" data-subgo="voices-q-ana-c4">Anaheim: benefits residents get from tourism</button><button type="button" class="rs-subchip" data-subgo="voices-q-gg-a2">Garden Grove: why residents feel the way they do</button><button type="button" class="rs-subchip" data-subgo="voices-q-gg-a3">Garden Grove: benefits of living there</button><button type="button" class="rs-subchip" data-subgo="voices-q-gg-a4">Garden Grove: concerns</button><button type="button" class="rs-subchip" data-subgo="voices-q-gg-a8">Garden Grove: views of Visit Anaheim</button><button type="button" class="rs-subchip" data-subgo="voices-q-gg-b9">Garden Grove: what would make offerings easier to use</button><button type="button" class="rs-subchip" data-subgo="voices-q-gg-c3a">Garden Grove: how tourism helps residents</button><button type="button" class="rs-subchip" data-subgo="voices-q-gg-d2">Garden Grove: a tourism career, why or why not</button><button type="button" class="rs-subchip" data-subgo="voices-q-gg-d3">Garden Grove: what would make a tourism career appealing</button><button type="button" class="rs-subchip" data-subgo="voices-m">How the answers were coded</button></nav>
+    <div class="rs-sub" id="voices-p1" data-sub-title="What residents are telling us">
+    <div class="rs-block">
+      <h3 class="rs-h3">What residents are telling us</h3>
+      <div data-draw="vstats" data-source="voices_totals"></div>
+      <h3 class="rs-h3">The top themes in each question</h3>
+      <div id="voices-summary" data-draw="vsum" data-source="voices_meta voices_themes"></div>
+      <p class="rs-cap">Shares are of residents who wrote an answer to that question (Formula F3). Anaheim and Garden Grove were asked different questions, so read each city on its own.</p>
+    </div>
+    </div>
+    <div class="rs-sub" id="voices-p2" data-sub-title="Themes across questions" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">Themes across questions</h3>
+      <p class="rs-cap">Each cell is the share of residents answering that question whose answer fell in the theme family. Darker means more residents; the number is printed in every cell. Select a cell to see the themes inside it.</p>
+      <div id="voices-heat" data-draw="vheat" data-source="voices_families voices_meta voices_themes"></div>
+    </div>
+    </div>
+    <div class="rs-sub" id="voices-p3" data-sub-title="Word meaning chart" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">Word meaning chart</h3>
+      <p class="rs-cap">The words residents used most, grouped by what they were talking about. Select a word to see what residents mean by it, where it comes up, and their own sentences.</p>
+      <div id="voices-terms" data-draw="vterms" data-source="voices_terms voices_meta"></div>
+    </div>
+    </div>
+    <div class="rs-sub" id="voices-q-ana-c4" data-sub-title="Anaheim: benefits residents get from tourism" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">Anaheim: benefits residents get from tourism</h3>
+      <div class="rs-vqhost" id="vq-ana-c4" data-draw="vq" data-qid="ANA-C4" data-source="voices_meta voices_themes voices_quotes"></div>
+      <details class="rs-details">
+        <summary>Earlier Anaheim waves: the vendor's own benefit themes</summary>
+        <div class="rs-scroll"><table class="rs-tbl"><thead><tr><th>Rank</th><th>Baseline (n=120 aware)</th><th>Wave 2 (base not reported)</th><th>Wave 3 (base not reported)</th></tr></thead><tbody data-draw="vthemes"></tbody></table></div>
+        <p class="rs-cap">Each wave used its own list of themes, so they are shown side by side, not trended.</p>
+      </details>
+    </div>
+    </div>
+    <div class="rs-sub" id="voices-q-gg-a2" data-sub-title="Garden Grove: why residents feel the way they do" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">Garden Grove: why residents feel the way they do</h3>
+      <div class="rs-vqhost" id="vq-gg-a2" data-draw="vq" data-qid="GG-A2" data-source="voices_meta voices_themes voices_quotes"></div>
+    </div>
+    </div>
+    <div class="rs-sub" id="voices-q-gg-a3" data-sub-title="Garden Grove: benefits of living there" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">Garden Grove: benefits of living there</h3>
+      <div class="rs-vqhost" id="vq-gg-a3" data-draw="vq" data-qid="GG-A3" data-source="voices_meta voices_themes voices_quotes"></div>
+    </div>
+    </div>
+    <div class="rs-sub" id="voices-q-gg-a4" data-sub-title="Garden Grove: concerns" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">Garden Grove: concerns</h3>
+      <div class="rs-vqhost" id="vq-gg-a4" data-draw="vq" data-qid="GG-A4" data-source="voices_meta voices_themes voices_quotes"></div>
+    </div>
+    </div>
+    <div class="rs-sub" id="voices-q-gg-a8" data-sub-title="Garden Grove: views of Visit Anaheim" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">Garden Grove: views of Visit Anaheim</h3>
+      <div class="rs-vqhost" id="vq-gg-a8" data-draw="vq" data-qid="GG-A8" data-source="voices_meta voices_themes voices_quotes"></div>
+    </div>
+    </div>
+    <div class="rs-sub" id="voices-q-gg-b9" data-sub-title="Garden Grove: what would make offerings easier to use" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">Garden Grove: what would make offerings easier to use</h3>
+      <div class="rs-vqhost" id="vq-gg-b9" data-draw="vq" data-qid="GG-B9" data-source="voices_meta voices_themes voices_quotes"></div>
+    </div>
+    </div>
+    <div class="rs-sub" id="voices-q-gg-c3a" data-sub-title="Garden Grove: how tourism helps residents" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">Garden Grove: how tourism helps residents</h3>
+      <div class="rs-vqhost" id="vq-gg-c3a" data-draw="vq" data-qid="GG-C3a" data-source="voices_meta voices_themes voices_quotes"></div>
+    </div>
+    </div>
+    <div class="rs-sub" id="voices-q-gg-d2" data-sub-title="Garden Grove: a tourism career, why or why not" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">Garden Grove: a tourism career, why or why not</h3>
+      <div class="rs-vqhost" id="vq-gg-d2" data-draw="vq" data-qid="GG-D2" data-source="voices_meta voices_themes voices_quotes"></div>
+    </div>
+    </div>
+    <div class="rs-sub" id="voices-q-gg-d3" data-sub-title="Garden Grove: what would make a tourism career appealing" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">Garden Grove: what would make a tourism career appealing</h3>
+      <div class="rs-vqhost" id="vq-gg-d3" data-draw="vq" data-qid="GG-D3" data-source="voices_meta voices_themes voices_quotes"></div>
+    </div>
+    </div>
+    <div class="rs-sub" id="voices-m" data-sub-title="How the answers were coded" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">How the answers were coded</h3>
+      <ul class="rs-list">
+        <li><strong>Collection.</strong> Each question was an open text box in the vendor's survey. Garden Grove questions were asked of all residents unless shown otherwise; the Anaheim question was asked of residents aware of tourism benefits. Answers in Vietnamese and Spanish were translated by BI and are labelled when quoted.</li>
+        <li><strong>Theme list.</strong> BI read the answers and built a list of themes for each question, then grouped themes into families that run across questions (for example, Getting around: traffic, parking, transit). One answer can carry several themes.</li>
+        <li><strong>Coding and checks.</strong> Answers were coded with written rules for each theme. Two reviews of samples of coded answers (every fifth answer, then every eighth) found 23 of 259 answers needing a change; the rules were corrected and every answer was coded again. A second person has not yet coded the answers independently.</li>
+        <li><strong>What is left out.</strong> Answers too vague to place (such as "alot") are counted but not themed. Quotes are shown as written, with names, contact details and anything that could identify a person or business screened out.</li>
+        <li><strong>Earlier waves.</strong> For Anaheim Baseline to Wave 3, only the vendor's own themes from its reports are available; the raw answers were not delivered.</li>
+      </ul>
+      <div class="rs-scroll">
+        <table class="rs-tbl" id="voices-qa" data-source="voices_meta" data-row-key="qid">
+          <thead><tr><th data-field="code">Question</th><th data-field="wording">Wording</th><th class="n" data-field="base_n">Answers</th><th class="n" data-field="coded_n">Placed in a theme</th><th class="n" data-field="none_n">Said none or don't know</th><th class="n" data-field="other_n">Too vague to code</th><th class="n" data-field="translated_n">Translated</th><th data-field="flag">Note</th></tr></thead>
+          <tbody data-draw="vqa"></tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+    <div class="rs-upnext" data-pdf-skip><span class="un-k">Up next</span><p class="un-p">Anaheim's results across four waves.</p><button type="button" class="rs-prev" data-goto="overview" data-target="overview">← Overview</button><button type="button" class="un-b" data-goto="anaheim" data-target="anaheim">Anaheim →</button></div>
   </section>
 
   <!-- ===================== ANAHEIM ===================== -->
@@ -331,7 +443,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     <div class="rs-sub" id="anaheim-p1" data-sub-title="Is Visit Anaheim better known among Anaheim residents?">
     <article class="rs-q" id="q-a1">
       <h2 class="rs-qh">Is Visit Anaheim better known among Anaheim residents?</h2>
-      <div class="rs-answer" data-tint="0"><p><strong>Short answer: yes, directionally.</strong> Awareness reached <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=va_aware">—</span>%</span> in Wave 4, up from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-BL&amp;kpi_id=va_aware">—</span>%</span> at Baseline, and familiarity among those aware rose to <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=va_fam">—</span>%</span>; both are four-wave highs. The vendor flags the awareness gain as significant, but a standard 95% test does not confirm it. The familiarity gain since Baseline is significant.</p></div>
+      <div class="rs-answer" data-tint="0"><p><strong>Short answer: yes.</strong> Awareness reached <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=va_aware">—</span>%</span> in Wave 4, up from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-BL&amp;kpi_id=va_aware">—</span>%</span> at Baseline, and familiarity among those aware rose to <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=va_fam">—</span>%</span>; both are four-wave highs. The vendor reports the awareness gain from Wave 3 as significant.</p></div>
       <div class="rs-block"><h3 class="rs-label">Marketing analysis</h3><div class="rs-mkt"><div><b>Who</b>Anaheim adults 18+ (total sample); familiarity asked of those aware, favorability of those familiar.</div><div><b>What</b>Awareness and familiarity of Visit Anaheim are at four-wave highs; favorability among the familiar stays high.</div><div><b>When</b>Baseline (Apr 2025) to Wave 4 (Oct 2026). The largest step came in Wave 4, the first wave fielded by the new vendor.</div><div><b>Where</b>Accepted Anaheim ZIP codes, with quotas for West Anaheim, Anaheim Hills and the Resort area.</div><div><b>Why (unconfirmed)</b>Possible, not confirmed: use of Visit Anaheim communications also reached a four-wave high in Wave 4; the vendor change may contribute.</div><div><b>How</b>Keep building reach through email and text, now residents&#x27; most preferred channels, and track awareness each wave.</div></div><h3 class="rs-label">Overall value</h3><div class="rs-val"><div><b>For the city</b>A better-known Visit Anaheim makes it easier to explain tourism&#x27;s role in the city.</div><div><b>For residents</b>More residents know where to find events, offerings and resident deals.</div><div><b>For Visit Anaheim</b>A wider resident audience for programs, newsletters and resident offers.</div></div></div>
       <div class="rs-qgrid">
         <div class="rs-stats"><div data-draw="stat" data-wave="ANA-W4" data-kpi="va_aware"></div><div data-draw="stat" data-wave="ANA-W4" data-kpi="va_fam"></div><div data-draw="stat" data-wave="ANA-W4" data-kpi="va_sent"></div></div>
@@ -398,13 +510,13 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       </div>
     </article>
     </div>
-    <div class="rs-upnext" data-pdf-skip><span class="un-k">Up next</span><p class="un-p">Garden Grove results across two waves, including the largest changes between waves.</p><button type="button" class="rs-prev" data-goto="overview" data-target="overview">← Overview</button><button type="button" class="un-b" data-goto="gardengrove" data-target="gardengrove">Garden Grove →</button></div>
+    <div class="rs-upnext" data-pdf-skip><span class="un-k">Up next</span><p class="un-p">Garden Grove results across two waves, including the largest changes between waves.</p><button type="button" class="rs-prev" data-goto="voices" data-target="voices">← In residents' own words</button><button type="button" class="un-b" data-goto="gardengrove" data-target="gardengrove">Garden Grove →</button></div>
   </section>
 
   <!-- ===================== GARDEN GROVE ===================== -->
   <section class="rs-page" id="gardengrove" role="tabpanel" hidden>
-    <div class="rs-block"><h2 class="rs-h2">Garden Grove: key questions</h2><p class="rs-cap">Two waves: W1 (May 2026, Olinger, n=91) and W2 (Oct 2026, Common Good, online and phone, n=100). About ±10 pts at these sample sizes. Select a card for its full summary.</p></div>
-    <div class="rs-note"><p><strong>Read the size of these changes with care.</strong> Every Garden Grove change below that is marked significant exceeds the margin of error, but between waves the vendor changed, phone interviews were added, Spanish was dropped, the offerings list was localized and the unweighted sample shifted (Asian 51% to 31%; homeowners 35% to 63%). Method changes may contribute; cause is not assigned.</p></div>
+    <div class="rs-block"><h2 class="rs-h2">Garden Grove: key questions</h2><p class="rs-cap">Two waves: W1 (May 2026, Olinger, n=91) and W2 (Oct 2026, Common Good, online and phone, n=100). Select a card for its full summary.</p></div>
+    <div class="rs-note"><p><strong>Read the size of these changes with care.</strong> The vendor reports these changes as significant, but between waves the vendor changed, phone interviews were added, Spanish was dropped, the offerings list was localized and the unweighted sample shifted (Asian 51% to 31%; homeowners 35% to 63%). Method changes may contribute; cause is not assigned.</p></div>
 
     <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Garden Grove"><button type="button" class="rs-subchip" data-subgo="gardengrove-p1">Did positive sentiment hold in Garden Grove?</button><button type="button" class="rs-subchip" data-subgo="gardengrove-p2">Do Garden Grove residents feel tourism benefits them?</button><button type="button" class="rs-subchip" data-subgo="gardengrove-p3">What happened to Visit Anaheim awareness and favorability in Garden Grove?</button><button type="button" class="rs-subchip" data-subgo="gardengrove-p4">How do we rebuild visibility and reconnect residents with local offerings?</button></nav>
     <div class="rs-sub" id="gardengrove-p1" data-sub-title="Did positive sentiment hold in Garden Grove?">
@@ -422,7 +534,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     <div class="rs-sub" id="gardengrove-p2" data-sub-title="Do Garden Grove residents feel tourism benefits them?" hidden>
     <article class="rs-q" id="q-g2">
       <h2 class="rs-qh">Do Garden Grove residents feel tourism benefits them?</h2>
-      <div class="rs-answer" data-tint="1"><p><strong>Short answer: many more do.</strong> <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=personal">—</span>%</span> agree tourism positively impacts them or their family, up from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W1&amp;kpi_id=personal">—</span>%</span>, and <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=tour_impact">—</span>%</span> say tourism has a positive impact on their life, up from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W1&amp;kpi_id=tour_impact">—</span>%</span>. Both gains are significant and exceed the margin of error; method changes may contribute.</p></div>
+      <div class="rs-answer" data-tint="1"><p><strong>Short answer: many more do.</strong> <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=personal">—</span>%</span> agree tourism positively impacts them or their family, up from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W1&amp;kpi_id=personal">—</span>%</span>, and <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=tour_impact">—</span>%</span> say tourism has a positive impact on their life, up from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W1&amp;kpi_id=tour_impact">—</span>%</span>. The vendor reports both gains as significant; method changes may contribute.</p></div>
       <div class="rs-block"><h3 class="rs-label">Marketing analysis</h3><div class="rs-mkt"><div><b>Who</b>All Garden Grove residents surveyed.</div><div><b>What</b>Many more residents say tourism benefits them personally and improves daily life.</div><div><b>When</b>Wave 1 (May 2026) to Wave 2 (Oct 2026).</div><div><b>Where</b>Garden Grove ZIP codes 92840–92845.</div><div><b>Why (unconfirmed)</b>Possible, not confirmed: the Wave 2 sample has more homeowners and full-time workers, and phone interviews were added.</div><div><b>How</b>Reinforce with local examples of tourism benefits before assuming the gain will hold.</div></div><h3 class="rs-label">Overall value</h3><div class="rs-val"><div><b>For the city</b>Growing resident support for tourism in the city.</div><div><b>For residents</b>Residents increasingly see tourism working for them.</div><div><b>For Visit Anaheim</b>An opening to connect Visit Anaheim with benefits residents already feel.</div></div></div>
       <div class="rs-qgrid">
         <div class="rs-stats"><div data-draw="stat" data-wave="GG-W2" data-kpi="personal"></div><div data-draw="stat" data-wave="GG-W2" data-kpi="tour_impact"></div><div data-draw="stat" data-wave="GG-W2" data-kpi="educated"></div></div>
@@ -463,7 +575,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
 
   <!-- ===================== BOTH CITIES ===================== -->
   <section class="rs-page" id="both" role="tabpanel" hidden>
-    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Both cities"><button type="button" class="rs-subchip" data-subgo="both-p1">What residents in both cities want</button><button type="button" class="rs-subchip" data-subgo="both-p2">In residents&#x27; own words</button></nav>
+    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Both cities"><button type="button" class="rs-subchip" data-subgo="both-p1">What residents in both cities want</button></nav>
     <div class="rs-sub" id="both-p1" data-sub-title="What residents in both cities want">
     <article class="rs-q" id="q-b1">
       <h2 class="rs-qh">What do residents in both cities want?</h2>
@@ -482,26 +594,46 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     </article>
 
     </div>
-    <div class="rs-sub" id="both-p2" data-sub-title="In residents&#x27; own words" hidden>
-    <div class="rs-block" id="themes">
-      <h3 class="rs-h3">In residents' own words</h3>
-      <p class="rs-cap">Newest waves were not coded by the vendor. Themes below are Visit Anaheim BI keyword coding of the raw verbatims: directional only, and a response can count in more than one theme. Quotes are shown as written, with identifying details screened out.</p>
-      <div class="rs-two">
-        <div class="rs-block"><h4 class="rs-h3">Anaheim W4: benefits residents receive from tourism</h4><p class="rs-cap">Asked of residents aware of benefits; 109 verbatims.</p><div class="rs-themes" data-draw="themes" data-city="Anaheim" data-wave="W4"></div></div>
-        <div class="rs-block"><h4 class="rs-h3">Garden Grove W2: what would make offerings easier to use</h4><p class="rs-cap">Asked of all residents; 100 verbatims.</p><div class="rs-themes" data-draw="themes" data-city="Garden Grove" data-wave="W2"></div></div>
-      </div>
-      <details class="rs-details">
-        <summary>Earlier Anaheim waves: vendor-coded benefit themes</summary>
-        <div class="rs-scroll"><table class="rs-tbl"><thead><tr><th>Rank</th><th>Baseline (n=120 aware)</th><th>Wave 2 (base not reported)</th><th>Wave 3 (base not reported)</th></tr></thead><tbody data-draw="vthemes"></tbody></table></div>
-        <p class="rs-cap">Each wave used its own code frame, so themes are not comparable across waves.</p>
-      </details>
-    </div>
-    </div>
     <div class="rs-upnext" data-pdf-skip><span class="un-k">Up next</span><p class="un-p">Every survey question, wave by wave.</p><button type="button" class="rs-prev" data-goto="gardengrove" data-target="gardengrove">← Garden Grove</button><button type="button" class="un-b" data-goto="every" data-target="every">Every question →</button></div>
   </section>
 
   <!-- ===================== EVERY QUESTION ===================== -->
   <section class="rs-page" id="every" role="tabpanel" hidden>
+    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Every question"><button type="button" class="rs-subchip" data-subgo="every-p1">Summary: both cities</button><button type="button" class="rs-subchip" data-subgo="every-p2">Summary: Anaheim</button><button type="button" class="rs-subchip" data-subgo="every-p3">Summary: Garden Grove</button><button type="button" class="rs-subchip" data-subgo="every-p4">Every question, wave by wave</button></nav>
+    <div class="rs-sub" id="every-p1" data-sub-title="Summary: both cities">
+    <div class="rs-block">
+      <h2 class="rs-h2">Summary: both cities</h2>
+      <p class="rs-cap">What the newest waves show when Anaheim (Wave 4) and Garden Grove (Wave 2) are read the same way. Each city is worked out on its own data.</p>
+      <h3 class="rs-h3">Views that go together</h3>
+      <div data-draw="ins" data-scope="All" data-kind="Linked views" data-source="insights"></div>
+      <h3 class="rs-h3">Opportunities</h3>
+      <div data-draw="ins" data-scope="All" data-kind="Opportunity" data-source="insights"></div>
+      <p class="rs-cap">Views that go together are worked out from the residents' own survey answers (Formula F6); they show which views travel together, not what causes what. Groups under 30 residents are left out.</p>
+    </div>
+    </div>
+    <div class="rs-sub" id="every-p2" data-sub-title="Summary: Anaheim" hidden>
+    <div class="rs-block">
+      <h2 class="rs-h2">Summary: Anaheim</h2>
+      <p class="rs-cap">Anaheim Wave 4 (Oct 2026), n=197.</p>
+      <h3 class="rs-h3">Views that go together</h3>
+      <div data-draw="ins" data-scope="Anaheim" data-kind="Linked views" data-source="insights"></div>
+      <h3 class="rs-h3">Opportunities</h3>
+      <div data-draw="ins" data-scope="Anaheim" data-kind="Opportunity" data-source="insights"></div>
+      <p class="rs-cap">Views that go together are worked out from the residents' own survey answers (Formula F6); they show which views travel together, not what causes what. Groups under 30 residents are left out.</p>
+    </div>
+    </div>
+    <div class="rs-sub" id="every-p3" data-sub-title="Summary: Garden Grove" hidden>
+    <div class="rs-block">
+      <h2 class="rs-h2">Summary: Garden Grove</h2>
+      <p class="rs-cap">Garden Grove Wave 2 (Oct 2026), n=100.</p>
+      <h3 class="rs-h3">Views that go together</h3>
+      <div data-draw="ins" data-scope="Garden Grove" data-kind="Linked views" data-source="insights"></div>
+      <h3 class="rs-h3">Opportunities</h3>
+      <div data-draw="ins" data-scope="Garden Grove" data-kind="Opportunity" data-source="insights"></div>
+      <p class="rs-cap">Views that go together are worked out from the residents' own survey answers (Formula F6); they show which views travel together, not what causes what. Groups under 30 residents are left out.</p>
+    </div>
+    </div>
+    <div class="rs-sub" id="every-p4" data-sub-title="Every question, wave by wave" hidden>
     <div class="rs-block">
       <h2 class="rs-h2">Every question, wave by wave</h2>
       <p class="rs-cap">Each question is charted with its change over the waves, with Anaheim and Garden Grove kept separate. Select a card for its full summary.</p>
@@ -513,7 +645,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
           </div>
         </div>
       </div>
-      <div class="rs-legend"><span>Bars: each wave, oldest to newest. ◆ change from prior wave significant per vendor; ● per BI test. Hollow bar: wording changed, not trended.</span></div>
+      <div class="rs-legend"><span>Bars: each wave, oldest to newest. ◆ change from prior wave reported as significant by the vendor. Hollow bar: wording changed, not trended.</span></div>
     </div>
     <div class="rs-every" id="every-grid" data-draw="every" data-source="kpis"></div>
 
@@ -527,6 +659,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       <p class="rs-cap">Dots show each wave for the selected city (lighter = older, darkest = newest); bars mark the range. Total sample in each wave.</p>
       <div class="rs-chart" id="every-items-chart" data-draw="itemdots" data-source="items needs"></div>
     </div>
+    </div>
     <div class="rs-upnext" data-pdf-skip><span class="un-k">Up next</span><p class="un-p">Options, priorities and a recommendation for marketing.</p><button type="button" class="rs-prev" data-goto="both" data-target="both">← Both cities</button><button type="button" class="un-b" data-goto="decision" data-target="decision">Decision guide →</button></div>
   </section>
 
@@ -534,7 +667,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
   <section class="rs-page" id="decision" role="tabpanel" hidden>
     <div class="rs-block">
       <h2 class="rs-h2">Decision guide: where to focus resident engagement</h2>
-      <p class="rs-flag">Recommendation – BI judgment, not survey data. Scores and weights are proposals to confirm.</p>
+      <p class="rs-flag">The data findings suggest where to focus first. Scores and weights are starting points: respond and adjust them on the Respond and decide page. </p>
       <dl class="rs-def">
         <dt>Decision</dt><dd>Which resident engagement priorities Marketing should fund first, framed from Marketing's Nov 9 next steps.</dd>
         <dt>Options</dt><dd>Five options: four from Marketing's next steps and the survey findings, plus one that may have been overlooked (fixing measurement first).</dd>
@@ -543,7 +676,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
         <dt>Who is affected</dt><dd>Anaheim and Garden Grove residents; Marketing leadership; Communications; partners offering resident discounts; the BI team that tracks results.</dd>
       </dl>
     </div>
-    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Decision guide"><button type="button" class="rs-subchip" data-subgo="decision-p1">Weighted decision matrix</button><button type="button" class="rs-subchip" data-subgo="decision-p2">Overlooked options and devil&#x27;s advocate</button><button type="button" class="rs-subchip" data-subgo="decision-p3">Recommendation</button><button type="button" class="rs-subchip" data-subgo="decision-p4">Assumptions to verify</button></nav>
+    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Decision guide"><button type="button" class="rs-subchip" data-subgo="decision-p1">Weighted decision matrix</button><button type="button" class="rs-subchip" data-subgo="decision-respond">Respond and decide</button><button type="button" class="rs-subchip" data-subgo="decision-p2">Overlooked options and devil&#x27;s advocate</button><button type="button" class="rs-subchip" data-subgo="decision-p3">Recommendation</button><button type="button" class="rs-subchip" data-subgo="decision-p4">Assumptions to verify</button></nav>
     <div class="rs-sub" id="decision-p1" data-sub-title="Weighted decision matrix">
     <div class="rs-block">
       <h3 class="rs-h3">Weighted decision matrix</h3>
@@ -551,6 +684,12 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       <div class="rs-viz" id="decision-chart" data-draw="dchart" data-source="decision_totals"></div>
       <div class="rs-scroll"><table class="rs-tbl" id="decision-matrix"><thead data-draw="dmhead"></thead><tbody data-draw="dmbody"></tbody></table></div>
       <div class="rs-block" id="decision-reasons" data-draw="dreasons" data-source="decision"></div>
+    </div>
+    </div>
+    <div class="rs-sub" id="decision-respond" data-sub-title="Respond and decide" hidden>
+    <div class="rs-block">
+      <h3 class="rs-h3">Respond and decide</h3>
+      <div id="decision-form" data-draw="decide" data-source="decision"></div>
     </div>
     </div>
     <div class="rs-sub" id="decision-p2" data-sub-title="Overlooked options and devil&#x27;s advocate" hidden>
@@ -587,7 +726,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
         <li>Cost scores assume existing email, social and eNewsletter tools; replace them once budget and team capacity are known.</li>
         <li>Visit Anaheim has resident email and text lists large enough to reach residents at scale.</li>
         <li>The Wave 4 Anaheim gains and Garden Grove swings are real change, not method effects (vendor confirmations pending).</li>
-        <li>Weights reflect BI's view of Marketing's priorities; adjust them and the totals will recalculate.</li>
+        <li>Weights are starting points; adjust them on the Respond and decide page and the ranking will recalculate.</li>
       </ul>
     </div>
     </div>
@@ -597,47 +736,49 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
   <!-- ===================== CITY COMPARISON ===================== -->
   <section class="rs-page" id="compare" role="tabpanel" hidden>
     <div class="rs-block">
-      <h2 class="rs-h2">Anaheim Wave 4 vs Garden Grove Wave 2</h2>
-      <div class="rs-note"><p><strong>Matching questions only.</strong> The two instruments are not aligned word for word. Garden Grove examples were tailored to local offerings, and city names are substituted in most items. Both waves were fielded by Common Good in Oct 2026, but Anaheim was online only in English (n=197) and Garden Grove was online and phone in English and Vietnamese (n=100). Differences under about 12 pts are within the combined margin of error.</p></div>
-      <div class="rs-legend"><span><span class="rs-sw c" data-draw="sw0"></span>Anaheim W4</span><span><span class="rs-sw" data-draw="sw1"></span>Garden Grove W2</span><span>Right column: Garden Grove minus Anaheim, with BI two-proportion test at 95%</span></div>
+      <h2 class="rs-h2">Anaheim Wave 4 and Garden Grove Wave 2, side by side</h2>
+      <div class="rs-note"><p><strong>Matching questions only.</strong> Both waves were fielded by Common Good Research Collective in Oct 2026. Anaheim: online, English, n=197. Garden Grove: online and phone, English and Vietnamese, n=100. Wording matches except for city names and local examples. Difference = Garden Grove minus Anaheim, in points (Formula F1).</p></div>
+      <div class="rs-legend"><span><span class="rs-sw c" data-draw="sw0"></span>Anaheim W4</span><span><span class="rs-sw" data-draw="sw1"></span>Garden Grove W2</span><span>Select a row to see its numbers in words.</span></div>
     </div>
-    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in City comparison"><button type="button" class="rs-subchip" data-subgo="compare-p1">Side by side</button><button type="button" class="rs-subchip" data-subgo="compare-p2">Not compared</button></nav>
+    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in City comparison"><button type="button" class="rs-subchip" data-subgo="compare-p1">Side by side</button><button type="button" class="rs-subchip" data-subgo="compare-p2">Asked differently: each city's own results</button></nav>
     <div class="rs-sub" id="compare-p1" data-sub-title="Side by side">
     <div class="rs-chart" id="compare-chart" data-draw="cmpchart" data-source="city_compare"></div>
     <div class="rs-scroll">
       <table class="rs-tbl" id="compare-table" data-source="city_compare" data-row-key="kpi_id">
-        <thead><tr><th data-field="kpi">KPI</th><th class="n" data-field="anaheim_w4_pct">Anaheim W4 (%)</th><th class="n" data-field="anaheim_w4_n">n</th><th class="n" data-field="garden_grove_w2_pct">Garden Grove W2 (%)</th><th class="n" data-field="garden_grove_w2_n">n</th><th class="n" data-field="diff_gg_minus_ana_pts">GG minus Anaheim (pts)</th><th data-field="bi_test">BI test</th><th data-field="wording_match">Wording match</th><th data-field="base_definition">Base</th></tr></thead>
+        <thead><tr><th data-field="kpi">Question</th><th class="n" data-field="anaheim_w4_pct">Anaheim W4 (%)</th><th class="n" data-field="anaheim_w4_n">n</th><th class="n" data-field="garden_grove_w2_pct">Garden Grove W2 (%)</th><th class="n" data-field="garden_grove_w2_n">n</th><th class="n" data-field="gap_pts">Difference (pts)</th><th data-field="wording_match">Wording match</th><th data-field="base_definition">Base</th></tr></thead>
         <tbody data-draw="cmptbl"></tbody>
       </table>
     </div>
     </div>
-    <div class="rs-sub" id="compare-p2" data-sub-title="Not compared" hidden>
+    <div class="rs-sub" id="compare-p2" data-sub-title="Asked differently: each city's own results" hidden>
     <div class="rs-block">
-      <h3 class="rs-h3">Not compared</h3>
-      <ul class="rs-list">
-        <li>Aware of resident benefits from tourism, and Understand tax benefits: asked in Anaheim only.</li>
-        <li>Feel well-informed about developments: Anaheim W4 asks specifically about OCVIBE's opening and offerings; Garden Grove asks about future developments in the city.</li>
-        <li>Awareness of local offerings: the lists differ by city.</li>
-      </ul>
+      <h3 class="rs-h3">Asked differently: each city's own results</h3>
+      <p class="rs-cap">These questions were asked in only one city, or with different wording or lists, so they are shown side by side here but not set against each other.</p>
+      <div class="rs-scroll">
+        <table class="rs-tbl" id="notcmp-table" data-source="notcmp" data-row-key="row_id">
+          <thead><tr><th data-field="item">Question</th><th data-field="city">City</th><th data-field="wave">Wave</th><th class="n" data-field="pct">%</th><th class="n" data-field="base_n">n</th><th data-field="why">Why not compared</th><th data-field="source">Source</th></tr></thead>
+          <tbody data-draw="notcmptbl"></tbody>
+        </table>
+      </div>
     </div>
     </div>
-    <div class="rs-upnext" data-pdf-skip><span class="un-k">Up next</span><p class="un-p">Who was surveyed, when, how, and what to keep in mind.</p><button type="button" class="rs-prev" data-goto="decision" data-target="decision">← Decision guide</button><button type="button" class="un-b" data-goto="methods" data-target="methods">Methodology and notes →</button></div>
+    <div class="rs-upnext" data-pdf-skip><span class="un-k">Up next</span><p class="un-p">Who was surveyed, when, how, and the formulas behind every number.</p><button type="button" class="rs-prev" data-goto="decision" data-target="decision">← Decision guide</button><button type="button" class="un-b" data-goto="methods" data-target="methods">Methodology and notes →</button></div>
   </section>
 
   <!-- ===================== METHODOLOGY ===================== -->
   <section class="rs-page" id="methods" role="tabpanel" hidden>
-    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Methodology and notes"><button type="button" class="rs-subchip" data-subgo="methods-p1">Wave register</button><button type="button" class="rs-subchip" data-subgo="methods-p2">Comparability rules</button><button type="button" class="rs-subchip" data-subgo="methods-p3">Data quality findings</button><button type="button" class="rs-subchip" data-subgo="methods-p4">Check against the Nov 9 summary</button><button type="button" class="rs-subchip" data-subgo="methods-p5">KPI definitions and crosswalk</button><button type="button" class="rs-subchip" data-subgo="methods-p6">Sources</button></nav>
+    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Methodology and notes"><button type="button" class="rs-subchip" data-subgo="methods-p1">Wave register</button><button type="button" class="rs-subchip" data-subgo="methods-p2">Comparability rules</button><button type="button" class="rs-subchip" data-subgo="methods-p3">Data quality findings</button><button type="button" class="rs-subchip" data-subgo="methods-p4">Check against the Nov 9 summary</button><button type="button" class="rs-subchip" data-subgo="methods-p5">KPI definitions and crosswalk</button><button type="button" class="rs-subchip" data-subgo="methods-p6">Sources</button><button type="button" class="rs-subchip" data-subgo="methods-p7">Formulas</button></nav>
     <div class="rs-sub" id="methods-p1" data-sub-title="Wave register">
     <div class="rs-block">
       <h2 class="rs-h2">Methodology and notes</h2>
       <h3 class="rs-h3">Wave register</h3>
       <div class="rs-scroll">
         <table class="rs-tbl" id="wave-register" data-source="waves" data-row-key="wave_id">
-          <thead><tr><th data-field="city">City</th><th data-field="wave">Wave</th><th data-field="vendor">Vendor</th><th data-field="field_dates">Field dates</th><th data-field="mode">Mode</th><th data-field="languages">Languages</th><th data-field="sample_frame">Sample frame</th><th class="n" data-field="base_n">Base n</th><th data-field="weighting">Weighting</th><th class="n" data-field="moe_95_pts">MOE (±pts)</th><th data-field="source_files">Source files</th></tr></thead>
+          <thead><tr><th data-field="city">City</th><th data-field="wave">Wave</th><th data-field="vendor">Vendor</th><th data-field="field_dates">Field dates</th><th data-field="mode">Mode</th><th data-field="languages">Languages</th><th data-field="sample_frame">Sample frame</th><th class="n" data-field="base_n">Base n</th><th data-field="weighting">Weighting</th><th data-field="source_files">Source files</th></tr></thead>
           <tbody data-draw="wavetbl"></tbody>
         </table>
       </div>
-      <p class="rs-cap">Vendor for Anaheim Baseline–W3 and Garden Grove W1 identified from the deck template (The Olinger Group). Vendor correspondence confirms Anaheim W4 dropped Spanish because of limited use in the prior study, and Garden Grove W2 was online plus phone within designated ZIP codes, up to n=100. MOE is BI-computed for a 50% result at 95% confidence under a simple-random-sample assumption.</p>
+      <p class="rs-cap">Vendor for Anaheim Baseline–W3 and Garden Grove W1 identified from the deck template (The Olinger Group). Vendor correspondence confirms Anaheim W4 dropped Spanish because of limited use in the prior study, and Garden Grove W2 was online plus phone within designated ZIP codes, up to n=100.</p>
     </div>
     </div>
     <div class="rs-sub" id="methods-p2" data-sub-title="Comparability rules" hidden>
@@ -647,7 +788,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
         <li>A KPI is trended only where wording and scale match across waves. The Anaheim "well-informed" item breaks at W4, and Garden Grove offerings items with new examples are not compared.</li>
         <li>Method changes are flagged on every trend: vendor (Olinger to Common Good at Anaheim W4 and Garden Grove W2), mode (Garden Grove W2 adds phone), languages, and sample size.</li>
         <li>No wave is weighted. Shifts in sample makeup carry straight into results, notably in Garden Grove.</li>
-        <li>Significance is labeled by source: vendor flags as published, and BI two-tailed pooled two-proportion tests at 95%. Where a wave did not report a subgroup base, the BI test is not run.</li>
+        <li>Significance shown on these pages is the vendor's own flag, as published in each report. Changes are simple differences in points between waves (Formula F1). BI's internal check is described in Formula F5 and is not shown on the pages.</li>
         <li>Bases under 50 are flagged "use caution"; bases under 30 are suppressed.</li>
       </ul>
     </div>
@@ -699,6 +840,21 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       </ul>
     </div>
     </div>
+    <div class="rs-sub" id="methods-p7" data-sub-title="Formulas" hidden>
+    <div class="rs-block" id="formulas">
+      <h3 class="rs-h3">Formulas</h3>
+      <p class="rs-cap">Every number on these pages is either taken straight from a vendor report or crosstab, or worked out with one of these formulas. Pages point to them by number.</p>
+      <dl class="rs-fx">
+        <dt>F1</dt><dd><strong>Change in points</strong><span class="rs-formula">later wave % − earlier wave %</span><span class="rs-cap">Used for change vs the prior wave, vs Baseline, and Garden Grove minus Anaheim. Uses the rounded shares as published.</span></dd>
+        <dt>F2</dt><dd><strong>Top-2-box share (vendor definition)</strong><span class="rs-formula">residents choosing the top two answers ÷ residents asked</span><span class="rs-cap">Taken from the vendor reports and crosstabs; not recalculated.</span></dd>
+        <dt>F3</dt><dd><strong>Theme share in written answers</strong><span class="rs-formula">residents whose answer mentions the theme ÷ residents who wrote an answer to the question</span><span class="rs-cap">One answer can mention several themes, so shares can add to more than 100%.</span></dd>
+        <dt>F4</dt><dd><strong>Word count in the word meaning chart</strong><span class="rs-formula">residents who used the word at least once ÷ residents who wrote any answer in that city</span><span class="rs-cap">Bases: Anaheim 109 residents, Garden Grove 100. Plurals and close forms count as one word (restaurant, restaurants).</span></dd>
+        <dt>F5</dt><dd><strong>Significance</strong><span class="rs-cap">The pages show only the vendor's own flag, as published. For internal checks, BI's working files also keep a two-tailed pooled two-proportion test at 95%:</span><span class="rs-formula">z = (p1 − p2) ÷ √( p̂ × (1 − p̂) × (1/n1 + 1/n2) ),  p̂ = (x1 + x2) ÷ (n1 + n2)</span></dd>
+        <dt>F6</dt><dd><strong>Views that go together</strong><span class="rs-formula">share holding view B among residents who hold view A, compared with the share among residents who do not</span><span class="rs-cap">Worked out from the Anaheim W4 and Garden Grove W2 survey files, aggregate only. Groups under 30 residents are left out. Shows that views travel together, not that one causes the other.</span></dd>
+        <dt>F7</dt><dd><strong>Weighted decision score</strong><span class="rs-formula">Σ (weight × score) ÷ Σ weights, scores 1–5</span><span class="rs-cap">Weights start from the guide and can be changed on Respond and decide.</span></dd>
+      </dl>
+    </div>
+    </div>
     <div class="rs-upnext" data-pdf-skip><span class="un-k">Up next</span><p class="un-p">The full cumulative KPI table.</p><button type="button" class="rs-prev" data-goto="compare" data-target="compare">← City comparison</button><button type="button" class="un-b" data-goto="table" data-target="table">Data table →</button></div>
   </section>
 
@@ -714,7 +870,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     </div>
     <div class="rs-scroll">
       <table class="rs-tbl" id="data-table" data-source="kpis" data-row-key="wave_id,kpi_id">
-        <thead><tr><th data-field="city">City</th><th data-field="wave_short">Wave</th><th data-field="vendor">Vendor</th><th data-field="kpi">KPI</th><th class="n" data-field="value_pct">Value (%)</th><th class="n" data-field="value_exact_pct">Exact (%)</th><th class="n" data-field="base_n">Base n</th><th data-field="base_definition">Base</th><th class="n" data-field="moe_95_pts">MOE (±pts)</th><th data-field="base_flag">Base flag</th><th class="n" data-field="chg_vs_prior_pts">Change vs prior (pts)</th><th data-field="vendor_sig_vs_prior">Vendor sig.</th><th data-field="bi_test_vs_prior">BI test vs prior</th><th class="n" data-field="bi_p_vs_prior">p</th><th class="n" data-field="chg_vs_baseline_pts">Change vs baseline (pts)</th><th data-field="bi_test_vs_baseline">BI test vs baseline</th><th class="n" data-field="bi_p_vs_baseline">p</th><th data-field="comparability">Comparability</th><th data-field="reconciliation_note">Note</th><th data-field="source">Source</th></tr></thead>
+        <thead><tr><th data-field="city">City</th><th data-field="wave_short">Wave</th><th data-field="vendor">Vendor</th><th data-field="kpi">KPI</th><th class="n" data-field="value_pct">Value (%)</th><th class="n" data-field="value_exact_pct">Exact (%)</th><th class="n" data-field="base_n">Base n</th><th data-field="base_definition">Base</th><th data-field="base_flag">Base flag</th><th class="n" data-field="chg_vs_prior_pts">Change vs prior (pts)</th><th data-field="vendor_sig_vs_prior">Significant (vendor)</th><th class="n" data-field="chg_vs_baseline_pts">Change vs baseline (pts)</th><th data-field="comparability">Comparability</th><th data-field="reconciliation_note">Note</th><th data-field="source">Source</th></tr></thead>
         <tbody data-draw="datatbl"></tbody>
       </table>
     </div>
@@ -788,15 +944,18 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     </div>
     <div class="rs-scroll">
       <table class="rs-tbl" id="detail-table" data-source="kpis" data-row-key="wave_id,kpi_id">
-        <thead><tr><th data-field="wave_short">Wave</th><th data-field="wave_month">Fielded</th><th data-field="vendor">Vendor</th><th class="n" data-field="value_pct">Value (%)</th><th class="n" data-field="base_n">Base n</th><th class="n" data-field="moe_95_pts">MOE (±pts)</th><th class="n" data-field="chg_vs_prior_pts">Change vs prior (pts)</th><th data-field="vendor_sig_vs_prior">Vendor sig.</th><th data-field="bi_test_vs_prior">BI test</th><th class="n" data-field="chg_vs_baseline_pts">Change vs baseline (pts)</th><th data-field="bi_test_vs_baseline">BI test vs baseline</th><th data-field="source">Source</th></tr></thead>
+        <thead><tr><th data-field="wave_short">Wave</th><th data-field="wave_month">Fielded</th><th data-field="vendor">Vendor</th><th class="n" data-field="value_pct">Value (%)</th><th class="n" data-field="base_n">Base n</th><th class="n" data-field="chg_vs_prior_pts">Change vs prior (pts)</th><th data-field="vendor_sig_vs_prior">Significant (vendor)</th><th class="n" data-field="chg_vs_baseline_pts">Change vs baseline (pts)</th><th data-field="source">Source</th></tr></thead>
         <tbody data-draw="dtable"></tbody>
       </table>
     </div>
   </section>
+  </div>
+  </div>
   <footer class="rs-foot"><span>Sources: vendor reports, crosstabs and survey data for Anaheim (Baseline to Wave 4) and Garden Grove (Waves 1 and 2), pulled Nov 10, 2026</span><span>Powered by Visit Anaheim Business Intelligence Team</span></footer>
   <nav class="rs-spbar" data-draw="spbar" data-pdf-skip aria-label="Page navigation"></nav>
 </div>
 
+<script src="xp.js"></script>
 <script>
 (function () {
   const PRIOR = {'ANA-W2': 'Baseline', 'ANA-W3': 'W2', 'ANA-W4': 'W3', 'GG-W2': 'W1'};
@@ -820,20 +979,10 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
   function notReady(el, st, tag) { el.replaceChildren(); if (st === 'error' || st === 'missing') el.append(h(tag || 'p', {class: 'rs-fail'}, 'Failed to load')); }
   function priorSig(r) {
     if (r.vendor_sig_vs_prior === 'Not comparable') return {text: 'Not comparable (wording changed)', sig: false, nc: true};
-    const v = r.vendor_sig_vs_prior === 'Yes', b = r.bi_test_vs_prior;
-    if (v && b === 'Significant') return {text: 'Significant (vendor and BI test)', sig: true};
-    if (v && b === 'Not significant') return {text: 'Significant per vendor; not confirmed by BI test', sig: true};
-    if (v) return {text: 'Significant (vendor)', sig: true};
-    if (b === 'Significant') return {text: 'Significant (BI test)', sig: true};
-    return {text: 'Not significant', sig: false};
+    if (r.vendor_sig_vs_prior === 'Yes') return {text: 'Significant (vendor report)', sig: true};
+    return {text: r.vendor_sig_vs_prior === 'No' ? 'Not significant (vendor report)' : 'Not tested by the vendor', sig: false};
   }
-  function baseSig(r) {
-    const b = r.bi_test_vs_baseline;
-    if (b === 'Significant') return {text: 'Significant (BI test)', sig: true};
-    if (b === 'Not significant') return {text: 'Not significant (BI test)', sig: false};
-    if (b === 'Not comparable') return {text: 'Not comparable', sig: false, nc: true};
-    return {text: 'BI test not run (base not reported)', sig: false};
-  }
+  function baseSig(r) { return {text: 'Difference in points (Formula F1)', sig: false}; }
   function tone(r, d, sig) { if (!sig || d == null || d === 0 || r.direction === 'neutral') return ''; return d > 0 ? 'good' : 'bad'; }
   function mark(source, field, where, text) { return h('span', {'data-source': source, 'data-field': field, 'data-where': where}, text); }
   const W = (r) => 'wave_id=' + enc(r.wave_id) + '&kpi_id=' + enc(r.kpi_id);
@@ -960,7 +1109,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     t2.append('tspan').text(glyph(ch) + ' from ');
     t2.append('tspan').attr('data-source', 'kpis').attr('data-field', 'value_pct').attr('data-where', W(b)).text(b.value_pct);
     t2.append('tspan').text('%');
-    svg.style('cursor', 'pointer').on('click', () => openDetail(r.kpi_id, r.city));
+    svg.style('cursor', 'pointer').on('click', (ev) => window.__rsXP(host, ev, null, () => openDetail(r.kpi_id, r.city)));
   });
 
   /* ---------- waffle ---------- */
@@ -978,6 +1127,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     const t = svg.append('text').attr('class', 'rs-vlab').attr('x', 0).attr('y', Wd + 18);
     t.append('tspan').attr('data-source', 'kpis').attr('data-field', 'value_pct').attr('data-where', W(r)).text(r.value_pct);
     t.append('tspan').text(' in 100: ' + r.kpi.toLowerCase());
+    svg.style('cursor', 'pointer').on('click', (ev) => window.__rsXP(host, ev, [r.kpi + ' · ' + r.city + ' ' + r.wave_short, r.value_pct + ' in every 100 residents (n=' + r.base_n + ')'], () => openDetail(r.kpi_id, r.city)));
   });
 
   /* ---------- multi-series lines (Anaheim) ---------- */
@@ -1025,7 +1175,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
         if (single || i === 0 || i === rows.length - 1) {
           const lab = g.append('text').attr('class', 'rs-vlab').attr('x', cx + (single ? 0 : (i === 0 ? -9 : 9))).attr('y', single ? cy - 11 : cy + 4).attr('text-anchor', single ? 'middle' : (i === 0 ? 'end' : 'start'));
           lab.append('tspan').attr('data-source', 'kpis').attr('data-field', 'value_pct').attr('data-where', W(r)).text(r.value_pct);
-          let suf = '%'; if (!nc && r.vendor_sig_vs_prior === 'Yes') suf += ' ◆'; if (!nc && r.bi_test_vs_prior === 'Significant') suf += ' ●';
+          let suf = '%'; if (!nc && r.vendor_sig_vs_prior === 'Yes') suf += ' ◆';
           lab.append('tspan').text(suf);
         }
         if (nc) g.append('text').attr('class', 'rs-axis').attr('x', cx).attr('y', cy + 20).attr('text-anchor', 'middle').text('New wording');
@@ -1034,9 +1184,9 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
           .on('pointerenter pointermove', (ev) => {
             const ps = priorSig(r);
             tipText(tip, [r.kpi + ' · ' + r.city + ' ' + r.wave_short + ' (' + r.wave_month + '): ' + r.value_pct + '%', 'n=' + (r.base_n || 'not reported') + ' · ' + r.base_definition,
-              r.chg_vs_prior_pts !== '' ? (r.chg_vs_prior_pts === 'n/a' ? 'Not comparable with prior wave' : 'vs prior: ' + signed(+r.chg_vs_prior_pts) + ' pts · ' + ps.text) : '', 'Vendor: ' + r.vendor, 'Click for full summary']);
+              r.chg_vs_prior_pts !== '' ? (r.chg_vs_prior_pts === 'n/a' ? 'Not comparable with prior wave' : 'vs prior: ' + signed(+r.chg_vs_prior_pts) + ' pts · ' + ps.text) : '', 'Vendor: ' + r.vendor]);
             placeTip(host, tip, ev);
-          }).on('pointerleave', () => { tip.hidden = true; }).on('click', () => openDetail(r.kpi_id, r.city));
+          }).on('pointerleave', () => { tip.hidden = true; }).on('click', (ev) => window.__rsXP(host, ev, null, () => openDetail(r.kpi_id, r.city)));
       });
     });
     host.append(tip);
@@ -1087,13 +1237,13 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       la.append('tspan').attr('data-source', 'kpis').attr('data-field', 'value_pct').attr('data-where', W(a)).text(a.value_pct); la.append('tspan').text('%');
       const lb = svg.append('text').attr('class', 'rs-vlab').attr('x', xr + 9).attr('y', ry[i] + 4);
       lb.append('tspan').attr('data-source', 'kpis').attr('data-field', 'value_pct').attr('data-where', W(b)).text(b.value_pct);
-      let suf = '% '; if (b.vendor_sig_vs_prior === 'Yes') suf += '◆'; if (b.bi_test_vs_prior === 'Significant') suf += '●';
+      let suf = '% '; if (b.vendor_sig_vs_prior === 'Yes') suf += '◆';
       lb.append('tspan').text(suf + ' ');
       const nm = lb.append('tspan').style('font-weight', '400').style('fill', 'var(--cds-text-secondary)').text(a.kpi);
       fitText(nm.node(), Wd - xr - 60);
       svg.append('line').attr('x1', xl).attr('y1', y(+a.value_pct)).attr('x2', xr).attr('y2', y(+b.value_pct)).style('stroke', 'transparent').style('stroke-width', 16).style('cursor', 'pointer')
         .on('pointerenter pointermove', (ev) => { tipText(tip, [a.kpi, 'W1: ' + a.value_pct + '% (n=' + a.base_n + ') → W2: ' + b.value_pct + '% (n=' + b.base_n + ')', signed(+b.chg_vs_prior_pts) + ' pts · ' + priorSig(b).text, 'Click for full summary']); placeTip(host, tip, ev); })
-        .on('pointerleave', () => { tip.hidden = true; }).on('click', () => openDetail(b.kpi_id, b.city));
+        .on('pointerleave', () => { tip.hidden = true; }).on('click', (ev) => window.__rsXP(host, ev, null, () => openDetail(b.kpi_id, b.city)));
     });
     host.append(tip);
   });
@@ -1124,7 +1274,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       if (bw >= 16) { const t = svg.append('text').attr('class', 'rs-vlab').attr('x', bx + bw / 2).attr('y', vy - 4).attr('text-anchor', 'middle').style('font-size', bw < 24 ? '10px' : null); t.append('tspan').attr('data-source', 'kpis').attr('data-field', 'value_pct').attr('data-where', W(r)).text(r.value_pct); }
       svg.append('rect').attr('x', bx).attr('y', m.t).attr('width', bw).attr('height', y(0) - m.t).style('fill', 'transparent').style('cursor', 'pointer')
         .on('pointerenter pointermove', (ev) => { tipText(tip, [r.kpi + ' · ' + r.wave_short, r.value_pct + '% (n=' + r.base_n + ')', nc ? 'Wording changed; not comparable' : (r.chg_vs_prior_pts ? 'vs prior: ' + signed(+r.chg_vs_prior_pts) + ' pts · ' + priorSig(r).text : ''), 'Click for full summary']); placeTip(host, tip, ev); })
-        .on('pointerleave', () => { tip.hidden = true; }).on('click', () => openDetail(r.kpi_id, r.city));
+        .on('pointerleave', () => { tip.hidden = true; }).on('click', (ev) => window.__rsXP(host, ev, null, () => openDetail(r.kpi_id, r.city)));
     }));
     host.append(tip);
   });
@@ -1156,7 +1306,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       t.append('tspan').attr('data-source', src).attr('data-field', 'pct').attr('data-where', 'row_id=' + enc(r.row_id)).text(r.pct); t.append('tspan').text('%');
       svg.append('rect').attr('x', 0).attr('y', y0).attr('width', Wd).attr('height', rowH).style('fill', 'transparent')
         .on('pointerenter pointermove', (ev) => { tipText(tip, [r.item, r.wave_short + ': ' + r.pct + '% (n=' + r.base_n + ')', pv != null ? 'Earlier wave: ' + pv + '%' : 'Not asked in the earlier wave', r.note || '']); placeTip(host, tip, ev); })
-        .on('pointerleave', () => { tip.hidden = true; });
+        .on('pointerleave', () => { tip.hidden = true; }).on('click', (ev) => window.__rsXP(host, ev));
     });
     host.append(tip);
   });
@@ -1205,7 +1355,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
         if (anim) rect.attr('y', y(0)).attr('height', 0).transition().delay(ki * 40 + i * 90).duration(600).ease(d3.easeCubicOut).attr('y', vy).attr('height', y(0) - vy); else rect.attr('y', vy).attr('height', y(0) - vy);
         const t = svg.append('text').attr('class', 'rs-vlab').attr('x', bx + bw / 2).attr('y', vy - 3).attr('text-anchor', 'middle').style('font-size', '11px');
         t.append('tspan').attr('data-source', 'kpis').attr('data-field', 'value_pct').attr('data-where', W(r)).text(r.value_pct);
-        let suf = ''; if (!nc && r.vendor_sig_vs_prior === 'Yes') suf += '◆'; if (!nc && r.bi_test_vs_prior === 'Significant') suf += '●'; if (suf) t.append('tspan').text(suf);
+        let suf = ''; if (!nc && r.vendor_sig_vs_prior === 'Yes') suf += '◆'; if (suf) t.append('tspan').text(suf);
         svg.append('text').attr('class', 'rs-axis').attr('x', bx + bw / 2).attr('y', H - 4).attr('text-anchor', 'middle').style('font-size', '10px').text(r.wave_short === 'Baseline' ? 'BL' : r.wave_short);
       });
       box.append(h('p', {class: 'rs-base'}, 'Latest n=', mark('kpis', 'base_n', W(last), last.base_n), ' · ' + last.base_definition));
@@ -1252,7 +1402,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
         const wi = waves.indexOf(p.wave_id);
         const dot = svg.append('circle').attr('cy', yy).attr('r', 6).style('fill', cityColor(c)).style('fill-opacity', shade(wi)).style('stroke', 'var(--color-bg)').style('stroke-width', 1)
           .on('pointerenter pointermove', (ev) => { tipText(tip, [it, waves.map((w) => { const r = data.find((x) => x.item === it && x.wave_id === w); return r ? r.wave_short + ': ' + r.pct + '%' : ''; }).filter(Boolean).join(' · '), p.note || '']); placeTip(host, tip, ev); })
-          .on('pointerleave', () => { tip.hidden = true; });
+          .on('pointerleave', () => { tip.hidden = true; }).on('click', (ev) => window.__rsXP(host, ev));
         if (anim) dot.attr('cx', x(0)).transition().delay(i * 30 + wi * 150).duration(700).ease(d3.easeCubicOut).attr('cx', x(+p.pct)); else dot.attr('cx', x(+p.pct));
       });
       const lastP = pts.find((p) => p.wave_id === lastW);
@@ -1289,6 +1439,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       if (anim) b.attr('width', 0).transition().delay(i * 120).duration(800).ease(d3.easeCubicOut).attr('width', x(r.weighted_total) - lw); else b.attr('width', x(r.weighted_total) - lw);
       const t = svg.append('text').attr('class', 'rs-vlab').attr('x', x(r.weighted_total) + 6).attr('y', i * rowH + 21);
       t.append('tspan').attr('data-source', 'decision_totals').attr('data-field', 'weighted_total').attr('data-where', 'option_id=' + enc(r.option_id)).text(r.weighted_total.toFixed(2));
+      b.style('cursor', 'pointer').on('click', (ev) => window.__rsXP(host, ev, [r.rank + '. ' + r.option, 'Weighted total ' + r.weighted_total.toFixed(2) + ' of 5 with the guide\u2019s starting weights', 'Respond and decide lets you change the weights.']));
     });
   });
   dash.draw('dmhead', (th) => {
@@ -1324,10 +1475,10 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     const svg = d3.select(host).append('svg').attr('width', Wd).attr('height', H).attr('role', 'img').attr('aria-label', 'Anaheim Wave 4 vs Garden Grove Wave 2 on ' + rows.length + ' matching KPIs');
     [0, 25, 50, 75, 100].forEach((v) => { svg.append('line').attr('x1', x(v)).attr('x2', x(v)).attr('y1', m.t + 18).attr('y2', H - 22).style('stroke', 'var(--cds-chart-grid)'); svg.append('text').attr('class', 'rs-axis').attr('x', x(v)).attr('y', H - 6).attr('text-anchor', v === 0 ? 'start' : v === 100 ? 'end' : 'middle').text(v + '%'); });
     rows.forEach((r, i) => {
-      const y0 = m.t + i * rowH, yd = y0 + (narrow ? 52 : 36), a = +r.anaheim_w4_pct, g = +r.garden_grove_w2_pct, df = +r.diff_gg_minus_ana_pts, where = 'kpi_id=' + enc(r.kpi_id);
+      const y0 = m.t + i * rowH, yd = y0 + (narrow ? 52 : 36), a = +r.anaheim_w4_pct, g = +r.garden_grove_w2_pct, df = +r.gap_pts, where = 'kpi_id=' + enc(r.kpi_id);
       svg.append('text').attr('x', m.l).attr('y', y0 + 14).style('fill', 'var(--color-fg)').style('font-size', 'var(--cds-font-size-caption)').style('font-weight', '600').text(r.kpi);
       const rt = narrow ? svg.append('text').attr('x', m.l).attr('y', y0 + 30).attr('class', 'rs-axis') : svg.append('text').attr('x', Wd - m.r).attr('y', y0 + 14).attr('text-anchor', 'end').attr('class', 'rs-axis');
-      rt.append('tspan').text(glyph(df) + ' '); rt.append('tspan').attr('data-source', 'city_compare').attr('data-field', 'diff_gg_minus_ana_pts').attr('data-where', where).text(signed(df)); rt.append('tspan').text(' pts · ' + (r.bi_test === 'Significant' ? 'significant' : 'not significant'));
+      rt.append('tspan').text(glyph(df) + ' '); rt.append('tspan').attr('data-source', 'city_compare').attr('data-field', 'gap_pts').attr('data-where', where).text(signed(df)); rt.append('tspan').text(' pts, Garden Grove minus Anaheim');
       svg.append('line').attr('x1', x(Math.min(a, g))).attr('x2', x(Math.max(a, g))).attr('y1', yd).attr('y2', yd).style('stroke', 'var(--cds-chart-muted)').style('stroke-width', 3);
       const ca = svg.append('circle').attr('cy', yd).attr('r', 6).style('fill', dash.colors[0]);
       const sg = svg.append('rect').attr('y', yd - 6).attr('width', 12).attr('height', 12).style('fill', dash.colors[1]);
@@ -1338,14 +1489,14 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       const lg = svg.append('text').attr('class', 'rs-vlab').attr('y', yd + 4).attr('x', x(g) + (aLeft ? 10 : -10)).attr('text-anchor', aLeft ? 'start' : 'end');
       lg.append('tspan').attr('data-source', 'city_compare').attr('data-field', 'garden_grove_w2_pct').attr('data-where', where).text(r.garden_grove_w2_pct); lg.append('tspan').text('%');
       svg.append('rect').attr('x', 0).attr('y', y0).attr('width', Wd).attr('height', rowH).style('fill', 'transparent')
-        .on('pointerenter pointermove', (ev) => { tipText(tip, [r.kpi, 'Anaheim W4: ' + a + '% (n=' + r.anaheim_w4_n + ')', 'Garden Grove W2: ' + g + '% (n=' + r.garden_grove_w2_n + ')', 'Difference: ' + signed(df) + ' pts · BI test ' + r.bi_test.toLowerCase(), 'Wording: ' + r.wording_match]); placeTip(host, tip, ev); })
-        .on('pointerleave', () => { tip.hidden = true; });
+        .on('pointerenter pointermove', (ev) => { tipText(tip, [r.kpi, 'Anaheim W4: ' + a + '% (n=' + r.anaheim_w4_n + ')', 'Garden Grove W2: ' + g + '% (n=' + r.garden_grove_w2_n + ')', 'Difference: ' + signed(df) + ' pts (Garden Grove minus Anaheim, Formula F1)', 'Wording: ' + r.wording_match, 'Base: ' + r.base_definition]); placeTip(host, tip, ev); })
+        .on('pointerleave', () => { tip.hidden = true; }).on('click', (ev) => window.__rsXP(host, ev));
     });
     host.append(tip);
   });
   dash.draw('cmptbl', (tb) => {
     const d = dash.data('city_compare'); if (d.status !== 'ok') { tb.replaceChildren(); return; }
-    tb.replaceChildren(...d.data.slice().sort((a, b) => +a.kpi_order - +b.kpi_order).map((r) => h('tr', {'data-key': enc(r.kpi_id)}, cell(r.kpi), cell(r.anaheim_w4_pct, 'n'), cell(r.anaheim_w4_n, 'n'), cell(r.garden_grove_w2_pct, 'n'), cell(r.garden_grove_w2_n, 'n'), cell(r.diff_gg_minus_ana_pts, 'n'), cell(r.bi_test), cell(r.wording_match), cell(r.base_definition))));
+    tb.replaceChildren(...d.data.slice().sort((a, b) => +a.kpi_order - +b.kpi_order).map((r) => h('tr', {'data-key': enc(r.kpi_id)}, cell(r.kpi), cell(r.anaheim_w4_pct, 'n'), cell(r.anaheim_w4_n, 'n'), cell(r.garden_grove_w2_pct, 'n'), cell(r.garden_grove_w2_n, 'n'), cell(r.gap_pts, 'n'), cell(r.wording_match), cell(r.base_definition))));
   });
 
   /* ---------- methodology tables ---------- */
@@ -1355,7 +1506,8 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       tb.replaceChildren(...d.data.map((r) => h('tr', {'data-key': key.map((k) => enc(r[k])).join(',')}, ...fields.map((f) => f === 'severity' ? h('td', null, h('span', {class: 'rs-sev ' + r[f]}, r[f])) : cell(r[f], (numeric || []).includes(f) ? 'n' : (['finding', 'effect_and_action', 'exact_wording', 'notes', 'source_files', 'sample_frame', 'source'].includes(f) ? 'wide' : null))))));
     });
   }
-  simpleTable('wavetbl', 'waves', ['wave_id'], ['city', 'wave', 'vendor', 'field_dates', 'mode', 'languages', 'sample_frame', 'base_n', 'weighting', 'moe_95_pts', 'source_files'], ['base_n', 'moe_95_pts']);
+  simpleTable('wavetbl', 'waves', ['wave_id'], ['city', 'wave', 'vendor', 'field_dates', 'mode', 'languages', 'sample_frame', 'base_n', 'weighting', 'source_files'], ['base_n']);
+  simpleTable('notcmptbl', 'notcmp', ['row_id'], ['item', 'city', 'wave', 'pct', 'base_n', 'why', 'source'], ['pct', 'base_n']);
   simpleTable('dqtbl', 'dq', ['finding_id'], ['finding_id', 'severity', 'wave', 'finding', 'effect_and_action'], ['finding_id']);
   simpleTable('recontbl', 'recon', ['check_id'], ['city', 'checkpoint_reported', 'verified_value', 'result', 'source']);
   simpleTable('xwtbl', 'crosswalk', ['kpi_id', 'wave_id'], ['kpi', 'city', 'wave_id', 'question_id', 'exact_wording', 'scale', 'trend_rating_vs_prior', 'cross_city_rating', 'notes']);
@@ -1371,7 +1523,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     const d = dash.data('kpis'); if (d.status !== 'ok') { tb.replaceChildren(); return; }
     const p = dash.params(), c = p.tcity || 'all', k = p.tkpi || 'all';
     const rows = d.data.filter((r) => (c === 'all' || r.city === c) && (k === 'all' || r.kpi_id === k)).sort((a, b) => (+a.kpi_order - +b.kpi_order) || (a.city < b.city ? -1 : a.city > b.city ? 1 : +a.wave_order - +b.wave_order));
-    tb.replaceChildren(...rows.map((r) => h('tr', {'data-key': enc(r.wave_id) + ',' + enc(r.kpi_id)}, cell(r.city), cell(r.wave_short), cell(r.vendor), cell(r.kpi), cell(r.value_pct, 'n'), cell(r.value_exact_pct, 'n'), cell(r.base_n, 'n'), cell(r.base_definition), cell(r.moe_95_pts, 'n'), cell(r.base_flag), cell(r.chg_vs_prior_pts, 'n'), cell(r.vendor_sig_vs_prior), cell(r.bi_test_vs_prior), cell(r.bi_p_vs_prior, 'n'), cell(r.chg_vs_baseline_pts, 'n'), cell(r.bi_test_vs_baseline), cell(r.bi_p_vs_baseline, 'n'), cell(r.comparability), cell(r.reconciliation_note, 'wide'), cell(r.source, 'wide'))));
+    tb.replaceChildren(...rows.map((r) => h('tr', {'data-key': enc(r.wave_id) + ',' + enc(r.kpi_id)}, cell(r.city), cell(r.wave_short), cell(r.vendor), cell(r.kpi), cell(r.value_pct, 'n'), cell(r.value_exact_pct, 'n'), cell(r.base_n, 'n'), cell(r.base_definition), cell(r.base_flag), cell(r.chg_vs_prior_pts, 'n'), cell(r.vendor_sig_vs_prior), cell(r.chg_vs_baseline_pts, 'n'), cell(r.comparability), cell(r.reconciliation_note, 'wide'), cell(r.source, 'wide'))));
   });
 
   /* ---------- KPI detail page ---------- */
@@ -1382,18 +1534,18 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     const {k, c} = DK(), rows = kpiRows(d.data, c, k); host.replaceChildren(); if (!rows.length) { host.append(h('p', null, 'Not asked in ' + c + '.')); return; }
     const last = rows[rows.length - 1], first = rows[0], prev = rows.length > 1 ? rows[rows.length - 2] : null;
     const n = (r, f) => mark('kpis', f, W(r), r[f]);
-    host.append(h('p', null, h('strong', null, 'Latest: '), n(last, 'value_pct'), '% of ' + c + ' residents in ' + last.wave + ' (' + last.wave_month + '; ' + last.base_definition.toLowerCase() + ', n=', n(last, 'base_n'), '; margin of error about ±', n(last, 'moe_95_pts'), ' pts).'));
+    host.append(h('p', null, h('strong', null, 'Latest: '), n(last, 'value_pct'), '% of ' + c + ' residents in ' + last.wave + ' (' + last.wave_month + '; ' + last.base_definition.toLowerCase() + ', n=', n(last, 'base_n'), ').'));
     if (prev) {
       const ps = priorSig(last);
       if (ps.nc) host.append(h('p', null, h('strong', null, 'Change: '), 'not comparable with ' + prev.wave + ' because the wording changed. Treat ' + last.wave + ' as a new series.'));
-      else host.append(h('p', null, h('strong', null, 'Change vs ' + prev.wave + ': '), glyph(+last.chg_vs_prior_pts) + ' ', mark('kpis', 'chg_vs_prior_pts', W(last), signed(+last.chg_vs_prior_pts)), ' pts from ', n(prev, 'value_pct'), '%. ' + ps.text + (last.bi_p_vs_prior !== '' ? ' (BI test p=' : ''), last.bi_p_vs_prior !== '' ? mark('kpis', 'bi_p_vs_prior', W(last), last.bi_p_vs_prior) : '', last.bi_p_vs_prior !== '' ? ').' : '.'));
-      if (c === 'Anaheim' && rows.length > 2 && last.chg_vs_baseline_pts !== '' && last.chg_vs_baseline_pts !== 'n/a') host.append(h('p', null, h('strong', null, 'Change vs Baseline: '), glyph(+last.chg_vs_baseline_pts) + ' ', mark('kpis', 'chg_vs_baseline_pts', W(last), signed(+last.chg_vs_baseline_pts)), ' pts from ', n(first, 'value_pct'), '% in ' + first.wave_month + '. ' + baseSig(last).text + '.'));
+      else host.append(h('p', null, h('strong', null, 'Change vs ' + prev.wave + ': '), glyph(+last.chg_vs_prior_pts) + ' ', mark('kpis', 'chg_vs_prior_pts', W(last), signed(+last.chg_vs_prior_pts)), ' pts from ', n(prev, 'value_pct'), '%. ' + ps.text + '.'));
+      if (c === 'Anaheim' && rows.length > 2 && last.chg_vs_baseline_pts !== '' && last.chg_vs_baseline_pts !== 'n/a') host.append(h('p', null, h('strong', null, 'Change vs Baseline: '), glyph(+last.chg_vs_baseline_pts) + ' ', mark('kpis', 'chg_vs_baseline_pts', W(last), signed(+last.chg_vs_baseline_pts)), ' pts from ', n(first, 'value_pct'), '% in ' + first.wave_month + ' (Formula F1).'));
     }
     const comp = rows.filter((r) => !r.comparability.startsWith('Not comparable'));
     if (comp.length > 2) { const hi = comp.reduce((a, b) => +b.value_pct > +a.value_pct ? b : a), lo = comp.reduce((a, b) => +b.value_pct < +a.value_pct ? b : a); host.append(h('p', null, h('strong', null, 'Range: '), 'highest ', n(hi, 'value_pct'), '% (' + hi.wave_short + '), lowest ', n(lo, 'value_pct'), '% (' + lo.wave_short + ').')); }
     const caveats = [];
     if (rows.some((r) => r.vendor.startsWith('Common Good')) && rows.some((r) => !r.vendor.startsWith('Common Good'))) caveats.push('The vendor changed from The Olinger Group to Common Good Research Collective in ' + rows.find((r) => r.vendor.startsWith('Common Good')).wave + ', so part of the latest change could reflect method.');
-    if (c === 'Garden Grove') caveats.push('Garden Grove also added phone interviews, dropped Spanish and had a different sample makeup in Wave 2; samples are about ±10 pts.');
+    if (c === 'Garden Grove') caveats.push('Garden Grove also added phone interviews, dropped Spanish and had a different sample makeup in Wave 2.');
     if (last.base_flag) caveats.push('Base: ' + last.base_flag + '.');
     if (last.reconciliation_note) caveats.push(last.reconciliation_note + '.');
     if (caveats.length) host.append(h('p', null, h('strong', null, 'Read with care: '), caveats.join(' ')));
@@ -1420,12 +1572,16 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
   dash.draw('dtable', (tb) => {
     const d = dash.data('kpis'); if (d.status !== 'ok') { tb.replaceChildren(); return; }
     const {k, c} = DK();
-    tb.replaceChildren(...kpiRows(d.data, c, k).map((r) => h('tr', {'data-key': enc(r.wave_id) + ',' + enc(r.kpi_id)}, cell(r.wave_short), cell(r.wave_month), cell(r.vendor), cell(r.value_pct, 'n'), cell(r.base_n, 'n'), cell(r.moe_95_pts, 'n'), cell(r.chg_vs_prior_pts, 'n'), cell(r.vendor_sig_vs_prior), cell(r.bi_test_vs_prior), cell(r.chg_vs_baseline_pts, 'n'), cell(r.bi_test_vs_baseline), cell(r.source, 'wide'))));
+    tb.replaceChildren(...kpiRows(d.data, c, k).map((r) => h('tr', {'data-key': enc(r.wave_id) + ',' + enc(r.kpi_id)}, cell(r.wave_short), cell(r.wave_month), cell(r.vendor), cell(r.value_pct, 'n'), cell(r.base_n, 'n'), cell(r.chg_vs_prior_pts, 'n'), cell(r.vendor_sig_vs_prior), cell(r.chg_vs_baseline_pts, 'n'), cell(r.source, 'wide'))));
   });
 })();
 </script>
 <script src="ask.js"></script>
 <script src="pdf.js"></script>
 <script src="pages.js"></script>
+<script src="voices.js"></script>
+<script src="insights.js"></script>
+<script src="decide.js"></script>
+<script src="side.js"></script>
 
 </div></body></html>

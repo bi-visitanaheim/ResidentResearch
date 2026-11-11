@@ -1,7 +1,7 @@
 /* ===== PDF export: one section per PDF, or every section in one PDF ===== */
 (function () {
-  const ORDER = ['overview', 'anaheim', 'gardengrove', 'both', 'every', 'decision', 'compare', 'methods', 'table', 'ask'];
-  const NAME = {overview: 'Overview', anaheim: 'Anaheim', gardengrove: 'Garden Grove', both: 'Both cities', every: 'Every question', decision: 'Decision guide', compare: 'City comparison', methods: 'Methodology and notes', table: 'Data table', ask: 'Ask the data', detail: 'KPI summary'};
+  const ORDER = ['overview', 'voices', 'anaheim', 'gardengrove', 'both', 'every', 'decision', 'compare', 'methods', 'table', 'ask'];
+  const NAME = {overview: 'Overview', voices: "In residents' own words", anaheim: 'Anaheim', gardengrove: 'Garden Grove', both: 'Both cities', every: 'Every question', decision: 'Decision guide', compare: 'City comparison', methods: 'Methodology and notes', table: 'Data table', ask: 'Ask the data', detail: 'KPI summary'};
   const PROPS = ['display', 'position', 'top', 'left', 'right', 'bottom', 'width', 'height', 'min-width', 'min-height', 'max-width', 'box-sizing',
     'margin-top', 'margin-right', 'margin-bottom', 'margin-left', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
     'border-top-width', 'border-right-width', 'border-bottom-width', 'border-left-width', 'border-top-style', 'border-right-style', 'border-bottom-style', 'border-left-style',

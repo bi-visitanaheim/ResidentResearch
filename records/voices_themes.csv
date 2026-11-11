@@ -1,0 +1,94 @@
+qid,city,wave,theme,family,count,base_n,pct,rank,flag,kind
+ANA-C4,Anaheim,W4,"Attractions, events and amenities","Attractions, events and things to do",44,109,40,1,,theme
+ANA-C4,Anaheim,W4,Local business and economy,Local economy and jobs,34,109,31,2,,theme
+ANA-C4,Anaheim,W4,Resident discounts and savings,Resident discounts and savings,27,109,25,3,,theme
+ANA-C4,Anaheim,W4,Tax revenue and city services,Local economy and jobs,27,109,25,4,,theme
+ANA-C4,Anaheim,W4,Jobs and employment,Local economy and jobs,23,109,21,5,,theme
+ANA-C4,Anaheim,W4,Meeting people and community pride,"Community, culture and family",20,109,18,6,,theme
+ANA-C4,Anaheim,W4,Don't know or none,No answer of substance,4,109,4,99,,none
+GG-A2,Garden Grove,W2,Community and welcoming people,"Community, culture and family",42,100,42,1,,theme
+GG-A2,Garden Grove,W2,Convenient location and access,"Food, shopping and daily convenience",37,100,37,2,,theme
+GG-A2,Garden Grove,W2,"Family-friendly, safe and calm","Community, culture and family",26,100,26,3,,theme
+GG-A2,Garden Grove,W2,Shopping and everyday services,"Food, shopping and daily convenience",22,100,22,4,,theme
+GG-A2,Garden Grove,W2,Food and dining,"Food, shopping and daily convenience",17,100,17,5,,theme
+GG-A2,Garden Grove,W2,"Nearby attractions, events and outdoors","Attractions, events and things to do",14,100,14,6,,theme
+GG-A2,Garden Grove,W2,Cultural diversity,"Community, culture and family",12,100,12,7,,theme
+GG-A2,Garden Grove,W2,Mixed or neutral feelings,No answer of substance,12,100,12,8,,theme
+GG-A2,Garden Grove,W2,"A good place to live, in general","Community, culture and family",8,100,8,9,,theme
+GG-A2,Garden Grove,W2,Lively and vibrant,"Community, culture and family",6,100,6,10,,theme
+GG-A2,Garden Grove,W2,"Drawbacks mentioned: cost, traffic, growth",Cost of living and housing,5,100,5,11,,theme
+GG-A2,Garden Grove,W2,Affordability,Cost of living and housing,3,100,3,12,,theme
+GG-A2,Garden Grove,W2,Jobs and business opportunity,Local economy and jobs,3,100,3,13,,theme
+GG-A3,Garden Grove,W2,Location and freeway access,"Food, shopping and daily convenience",43,100,43,1,,theme
+GG-A3,Garden Grove,W2,"Diverse, welcoming community","Community, culture and family",26,100,26,2,,theme
+GG-A3,Garden Grove,W2,Food and restaurants,"Food, shopping and daily convenience",25,100,25,3,,theme
+GG-A3,Garden Grove,W2,Shopping and local shops,"Food, shopping and daily convenience",19,100,19,4,,theme
+GG-A3,Garden Grove,W2,Nearby attractions and entertainment,"Attractions, events and things to do",15,100,15,5,,theme
+GG-A3,Garden Grove,W2,Jobs and employment,Local economy and jobs,14,100,14,6,,theme
+GG-A3,Garden Grove,W2,Affordable cost of living,Cost of living and housing,13,100,13,7,,theme
+GG-A3,Garden Grove,W2,"Parks, outdoors and climate","Attractions, events and things to do",11,100,11,8,,theme
+GG-A3,Garden Grove,W2,"Schools, health care and public services","Safety, upkeep and public spaces",9,100,9,9,,theme
+GG-A3,Garden Grove,W2,Events and festivals,"Attractions, events and things to do",6,100,6,10,,theme
+GG-A3,Garden Grove,W2,Housing and neighborhood space,Cost of living and housing,6,100,6,11,,theme
+GG-A3,Garden Grove,W2,Family nearby,"Community, culture and family",3,100,3,12,,theme
+GG-A3,Garden Grove,W2,Safety and low crime,"Safety, upkeep and public spaces",3,100,3,13,,theme
+GG-A4,Garden Grove,W2,Traffic congestion,Getting around,36,100,36,1,,theme
+GG-A4,Garden Grove,W2,Cost of living and housing,Cost of living and housing,29,100,29,2,,theme
+GG-A4,Garden Grove,W2,Parking,Getting around,18,100,18,3,,theme
+GG-A4,Garden Grove,W2,Crowds and tourist pressure,Getting around,14,100,14,4,,theme
+GG-A4,Garden Grove,W2,Upkeep and maintenance,"Safety, upkeep and public spaces",13,100,13,5,,theme
+GG-A4,Garden Grove,W2,"Safety, homelessness and incidents","Safety, upkeep and public spaces",12,100,12,6,,theme
+GG-A4,Garden Grove,W2,Noise,"Safety, upkeep and public spaces",4,100,4,7,,theme
+GG-A4,Garden Grove,W2,Getting around without a car,Getting around,2,100,2,8,,theme
+GG-A4,Garden Grove,W2,Growth and neighborhood character,"Community, culture and family",2,100,2,9,,theme
+GG-A4,Garden Grove,W2,No concerns,No answer of substance,6,100,6,99,,none
+GG-A8,Garden Grove,W2,"Promotes the area, events and local business",Information and communication,30,65,46,1,,theme
+GG-A8,Garden Grove,W2,"Known for Disneyland, theme parks and attractions","Attractions, events and things to do",18,65,28,2,,theme
+GG-A8,Garden Grove,W2,Helps plan outings and trips,Information and communication,13,65,20,3,,theme
+GG-A8,Garden Grove,W2,Helps the local economy,Local economy and jobs,10,65,15,4,,theme
+GG-A8,Garden Grove,W2,Little contact or familiarity,Awareness of Visit Anaheim,10,65,15,5,,theme
+GG-A8,Garden Grove,W2,"Food, culture and people","Community, culture and family",5,65,8,6,,theme
+GG-A8,Garden Grove,W2,Traffic and crowding worries,Getting around,3,65,5,7,,theme
+GG-A8,Garden Grove,W2,Could do more for residents,Resident discounts and savings,2,65,3,8,,theme
+GG-A8,Garden Grove,W2,No strong opinion,Awareness of Visit Anaheim,2,65,3,9,,theme
+GG-A8,Garden Grove,W2,Balances tourism with local life,"Community, culture and family",1,65,2,10,,theme
+GG-B9,Garden Grove,W2,Clear information about local events,Information and communication,27,100,27,1,,theme
+GG-B9,Garden Grove,W2,Lower prices and resident discounts,Resident discounts and savings,23,100,23,2,,theme
+GG-B9,Garden Grove,W2,Easier parking,Getting around,21,100,21,3,,theme
+GG-B9,Garden Grove,W2,Events on weekends and evenings,"Attractions, events and things to do",19,100,19,4,,theme
+GG-B9,Garden Grove,W2,Shuttles and transit,Getting around,14,100,14,5,,theme
+GG-B9,Garden Grove,W2,Less traffic,Getting around,13,100,13,6,,theme
+GG-B9,Garden Grove,W2,More or different events,"Attractions, events and things to do",11,100,11,7,,theme
+GG-B9,Garden Grove,W2,More time or spending money,Cost of living and housing,5,100,5,8,,theme
+GG-B9,Garden Grove,W2,Safety and security,"Safety, upkeep and public spaces",4,100,4,9,,theme
+GG-B9,Garden Grove,W2,Better event infrastructure,"Safety, upkeep and public spaces",3,100,3,10,,theme
+GG-B9,Garden Grove,W2,Places to gather,"Community, culture and family",1,100,1,11,,theme
+GG-B9,Garden Grove,W2,Nothing needed,No answer of substance,4,100,4,99,,none
+GG-C3a,Garden Grove,W2,Local business and economy,Local economy and jobs,34,74,46,1,,theme
+GG-C3a,Garden Grove,W2,"Events, entertainment and things to do","Attractions, events and things to do",23,74,31,2,,theme
+GG-C3a,Garden Grove,W2,More restaurants and shops,"Food, shopping and daily convenience",20,74,27,3,,theme
+GG-C3a,Garden Grove,W2,Investment in amenities and public spaces,"Safety, upkeep and public spaces",10,74,14,4,,theme
+GG-C3a,Garden Grove,W2,Jobs and income,Local economy and jobs,10,74,14,5,,theme
+GG-C3a,Garden Grove,W2,Tax revenue and public services,Local economy and jobs,10,74,14,6,,theme
+GG-C3a,Garden Grove,W2,Cultural diversity,"Community, culture and family",7,74,9,7,,theme
+GG-C3a,Garden Grove,W2,Positive atmosphere and meeting visitors,"Community, culture and family",4,74,5,8,,theme
+GG-C3a,Garden Grove,W2,No effect noticed,No answer of substance,1,74,1,99,,none
+GG-D2,Garden Grove,W2,Happy or established in current job or career,Careers and work,26,93,28,1,,theme
+GG-D2,Garden Grove,W2,"Different field, skills or experience",Careers and work,23,93,25,2,,theme
+GG-D2,Garden Grove,W2,Not interested or no strong view,Careers and work,23,93,25,3,,theme
+GG-D2,Garden Grove,W2,Tourism offers jobs and growth,Careers and work,22,93,24,4,,theme
+GG-D2,Garden Grove,W2,Open to it if the right role comes,Careers and work,17,93,18,5,,theme
+GG-D2,Garden Grove,W2,Working conditions do not appeal,Careers and work,9,93,10,6,,theme
+GG-D2,Garden Grove,W2,"Retired, student or at home",Careers and work,6,93,6,7,,theme
+GG-D2,Garden Grove,W2,Enjoy helping people or sharing the community,"Community, culture and family",4,93,4,8,,theme
+GG-D2,Garden Grove,W2,Close to home,Getting around,3,93,3,9,,theme
+GG-D3,Garden Grove,W2,Better pay and benefits,Careers and work,23,45,51,1,Use caution (under 50),theme
+GG-D3,Garden Grove,W2,Career growth and stability,Careers and work,16,45,36,2,Use caution (under 50),theme
+GG-D3,Garden Grove,W2,Flexible schedule and work-life balance,Careers and work,13,45,29,3,Use caution (under 50),theme
+GG-D3,Garden Grove,W2,A role that fits my background,Careers and work,7,45,16,4,Use caution (under 50),theme
+GG-D3,Garden Grove,W2,Good opportunities in general,Careers and work,6,45,13,5,Use caution (under 50),theme
+GG-D3,Garden Grove,W2,Guidance and information about roles,Information and communication,4,45,9,6,Use caution (under 50),theme
+GG-D3,Garden Grove,W2,Contribute to the local economy and community,Local economy and jobs,3,45,7,7,Use caution (under 50),theme
+GG-D3,Garden Grove,W2,Chance to start or promote my own business,Local economy and jobs,2,45,4,8,Use caution (under 50),theme
+GG-D3,Garden Grove,W2,Jobs close to home,Getting around,2,45,4,9,Use caution (under 50),theme
+GG-D3,Garden Grove,W2,Nothing in particular,No answer of substance,2,45,4,99,Use caution (under 50),none
