@@ -1,0 +1,14 @@
+field,definition
+facts,One row per reported or computed value across every document. Use for search and Q&A.
+fact_id,Row id
+kind,KPI trend (verified) | Crosstab | Vendor deck chart | Relationship (BI-computed) | Segment (BI-computed) | Multi-select item | Resident needs | Open-end theme
+city,Anaheim or Garden Grove
+wave_id,"ANA-BL..ANA-W4, GG-W1..GG-W2"
+topic,Question or measure
+answer,"Response option, item, theme or relationship"
+segment_group / segment,Banner group and segment (Total when none)
+pct,Percent (0-100). Blank only when suppressed (base under 30)
+base_n,Unweighted base; blank on deck charts (base from wave register)
+sig,Vendor sig letters or BI test
+flag,"Base caution, suppression, or known vendor error"
+source,File and table/slide
