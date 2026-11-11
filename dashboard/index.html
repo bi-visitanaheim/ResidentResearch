@@ -267,18 +267,13 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
   <div class="rs-main">
   <!-- ===================== OVERVIEW ===================== -->
   <section class="rs-page" id="overview" role="tabpanel">
-    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Overview"><button type="button" class="rs-subchip" data-subgo="overview-p1">Summary</button><button type="button" class="rs-subchip" data-subgo="overview-p2">Key questions</button><button type="button" class="rs-subchip" data-subgo="overview-p3">Anaheim KPIs</button><button type="button" class="rs-subchip" data-subgo="overview-p4">Garden Grove KPIs</button></nav>
+    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Overview"><button type="button" class="rs-subchip" data-subgo="overview-p1">Summary</button><button type="button" class="rs-subchip" data-subgo="overview-anim">Animated summary</button><button type="button" class="rs-subchip" data-subgo="overview-p2">Key questions</button><button type="button" class="rs-subchip" data-subgo="overview-p3">Anaheim KPIs</button><button type="button" class="rs-subchip" data-subgo="overview-p4">Garden Grove KPIs</button></nav>
     <div class="rs-sub" id="overview-p1" data-sub-title="Summary">
     <article class="rs-paper" id="summary-paper" data-read lang="en">
       <p class="rs-nameplate">Resident Sentiment Summary</p>
       <p class="rs-dateline">Visit Anaheim Business Intelligence · Anaheim Baseline (Apr 2025) to Wave 4 (Oct 2026) · Garden Grove Wave 1 (May 2026) to Wave 2 (Oct 2026)</p>
       <h2 class="rs-headline">Anaheim warms to tourism; Garden Grove feels its benefits more</h2>
       <p class="rs-deck">Both cities want resident discounts and clearer, more useful information.</p>
-      <!-- BI REFRESH FLAG: This GIF is a static snapshot (data pulled 2026-11-10: Anaheim W4, Garden Grove W2). It does NOT update automatically. On every new data pull / new wave: (1) update the Motion clip from the cumulative KPI table, (2) re-export the GIF and replace dashboard/resident-sentiment-2026.gif, (3) update the alt text, caption and data-snapshot date below, (4) commit and push. See README "Updating when a new wave arrives". -->
-      <figure class="rs-video" id="overview-video" data-pdf-skip data-refresh-on-new-wave="true" data-snapshot="2026-11-10" style="margin:16px 0 20px;padding:0;">
-        <img src="resident-sentiment-2026.gif" width="640" height="360" style="display:block;width:100%;max-width:960px;height:auto;border-radius:8px;" alt="Animated summary, What residents told us: 197 Anaheim and 100 Garden Grove residents surveyed in October 2026. Anaheim Wave 4 vs Wave 3: positive about tourism 69% to 78%, aware of Visit Anaheim 64% to 71%, aware of resident benefits 43% to 56%. Garden Grove Wave 2 vs Wave 1: tourism benefits me and my family 51% to 76%, aware of Visit Anaheim 85% to 68%, used Visit Anaheim communications 71% to 23%. Would appreciate resident discounts: Anaheim 83%, Garden Grove 91%.">
-        <figcaption class="rs-cap" style="margin-top:8px;">Animation (20 sec loop): what residents told us, Anaheim Wave 4 (Oct 2026, 197 residents) vs Wave 3 and Garden Grove Wave 2 (Oct 2026, 100 residents) vs Wave 1. Only changes the vendor reports as significant are shown; the survey vendor changed this wave. Source: Visit Anaheim Resident Sentiment Survey, Common Good Research Collective (Oct 2026); The Olinger Group (earlier waves). Snapshot of data pulled Nov. 10, 2026; refreshed when a new wave is added.</figcaption>
-      </figure>
       <div class="rs-cols">
         <p><strong>ANAHEIM, Calif. (Nov. 11, 2026):</strong> <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=tour_sent">—</span>%</span> of Anaheim residents now like or love tourism, up from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-BL&amp;kpi_id=tour_sent">—</span>%</span> in April 2025, yet only <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=values_res">—</span>%</span> feel the city values residents over visitors.</p>
         <p>Awareness of Visit Anaheim reached <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=va_aware">—</span>%</span>, a four-wave high, and <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=ben_aware">—</span>%</span> are aware of resident benefits from tourism. Personal benefit is flat at <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=personal">—</span>%</span>.</p>
@@ -296,6 +291,17 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       <p class="rs-end">###</p>
     </article>
 
+    </div>
+    <div class="rs-sub" id="overview-anim" data-sub-title="Animated summary" data-pdf-skip hidden>
+    <div class="rs-block" id="animated-summary">
+      <h2 class="rs-h3">Animated summary</h2>
+      <p class="rs-cap">What residents told us in 20 seconds: the changes the survey vendor reports as significant in each city's latest wave.</p>
+      <!-- BI REFRESH FLAG: This GIF is a static snapshot (data pulled 2026-11-10: Anaheim W4, Garden Grove W2). It does NOT update automatically. On every new data pull / new wave: (1) update the Motion clip from the cumulative KPI table, (2) re-export the GIF and replace dashboard/resident-sentiment-2026.gif, (3) update the alt text, caption and data-snapshot date below, (4) commit and push. See README "Updating when a new wave arrives". -->
+      <figure class="rs-video" id="overview-video" data-pdf-skip data-refresh-on-new-wave="true" data-snapshot="2026-11-10" style="margin:12px 0 0;padding:0;">
+        <img src="resident-sentiment-2026.gif" width="640" height="360" style="display:block;width:100%;max-width:1280px;height:auto;border-radius:8px;" alt="Animated summary, What residents told us: 197 Anaheim and 100 Garden Grove residents surveyed in October 2026. Anaheim Wave 4 vs Wave 3: positive about tourism 69% to 78%, aware of Visit Anaheim 64% to 71%, aware of resident benefits 43% to 56%. Garden Grove Wave 2 vs Wave 1: tourism benefits me and my family 51% to 76%, aware of Visit Anaheim 85% to 68%, used Visit Anaheim communications 71% to 23%. Would appreciate resident discounts: Anaheim 83%, Garden Grove 91%.">
+        <figcaption class="rs-cap" style="margin-top:8px;">Animation (20 sec loop): what residents told us, Anaheim Wave 4 (Oct 2026, 197 residents) vs Wave 3 and Garden Grove Wave 2 (Oct 2026, 100 residents) vs Wave 1. Only changes the vendor reports as significant are shown; the survey vendor changed this wave. Source: Visit Anaheim Resident Sentiment Survey, Common Good Research Collective (Oct 2026); The Olinger Group (earlier waves). Not included in PDF export. Snapshot of data pulled Nov. 10, 2026; refreshed when a new wave is added.</figcaption>
+      </figure>
+    </div>
     </div>
     <div class="rs-sub" id="overview-p2" data-sub-title="Key questions" hidden>
     <div class="rs-block" id="sues-questions">
