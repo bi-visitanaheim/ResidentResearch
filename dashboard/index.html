@@ -296,7 +296,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
     <div class="rs-block" id="animated-summary">
       <h2 class="rs-h3">Animated summary</h2>
       <p class="rs-cap">What residents told us in 20 seconds: the changes the survey vendor reports as significant in each city's latest wave.</p>
-      <div class="rs-giftools" id="gif-tools" data-pdf-skip style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 6px;"><button type="button" class="rs-pdfbtn ghost" id="gif-toggle" aria-controls="overview-video" aria-pressed="false">Hide animation</button><button type="button" class="rs-pdfbtn" id="gif-download">Download GIF</button><span class="rs-pdfstat" id="gif-stat" role="status" aria-live="polite"></span></div>
+      <div class="rs-giftools" id="gif-tools" data-pdf-skip style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 6px;"><button type="button" class="rs-pdfbtn ghost" id="gif-toggle" aria-controls="overview-video" aria-pressed="false"><span class="gif-lab-hide">Hide animation</span><span class="gif-lab-show" hidden>Show animation</span></button><button type="button" class="rs-pdfbtn" id="gif-download">Download GIF</button><span class="rs-pdfstat" id="gif-stat" role="status" aria-live="polite"></span></div>
       <p class="rs-cap" id="gif-hidden-note" hidden>Animation hidden. Select Show animation to view it again.</p>
       <!-- BI REFRESH FLAG: This GIF is a static snapshot (data pulled 2026-11-10: Anaheim W4, Garden Grove W2). It does NOT update automatically. On every new data pull / new wave: (1) update the Motion clip from the cumulative KPI table, (2) re-export the GIF and replace dashboard/resident-sentiment-2026.gif, (3) update the alt text, caption and data-snapshot date below, (4) commit and push. See README "Updating when a new wave arrives". -->
       <figure class="rs-video" id="overview-video" data-pdf-skip data-refresh-on-new-wave="true" data-snapshot="2026-11-10" style="margin:12px 0 0;padding:0;">
@@ -673,30 +673,28 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       <div class="rs-chart" id="every-items-chart" data-draw="itemdots" data-source="items needs"></div>
     </div>
     </div>
-    <div class="rs-upnext" data-pdf-skip><span class="un-k">Up next</span><p class="un-p">Options, priorities and a recommendation for marketing.</p><button type="button" class="rs-prev" data-goto="both" data-target="both">← Both cities</button><button type="button" class="un-b" data-goto="decision" data-target="decision">Decision guide →</button></div>
+    <div class="rs-upnext" data-pdf-skip><span class="un-k">Up next</span><p class="un-p">Options and the survey evidence behind each one.</p><button type="button" class="rs-prev" data-goto="both" data-target="both">← Both cities</button><button type="button" class="un-b" data-goto="decision" data-target="decision">Decision guide →</button></div>
   </section>
 
   <!-- ===================== DECISION GUIDE ===================== -->
   <section class="rs-page" id="decision" role="tabpanel" hidden>
     <div class="rs-block">
       <h2 class="rs-h2">Decision guide: where to focus resident engagement</h2>
-      <p class="rs-flag">The data findings suggest where to focus first. Scores and weights are starting points: respond and adjust them on the Respond and decide page. </p>
+      <p class="rs-flag">The guide lays out the options and the survey evidence for each one. Nothing is pre-scored: weights and 1–5 scores are judgment, not survey data, so you set them on the Respond and decide page.</p>
       <dl class="rs-def">
         <dt>Decision</dt><dd>Which resident engagement priorities Marketing should fund first, framed from Marketing's Nov 9 next steps.</dd>
         <dt>Options</dt><dd>Five options: four from Marketing's next steps and the survey findings, plus one that may have been overlooked (fixing measurement first).</dd>
-        <dt>Constraints</dt><dd>Budget, timeline and team capacity were not provided. Non-negotiables assumed: accurate, even-handed reporting across both cities, and nothing that can't be tracked in the survey.</dd>
+        <dt>Constraints</dt><dd>Budget, timeline and team capacity were not provided. Non-negotiables to confirm: accurate, even-handed reporting across both cities, and nothing that can't be tracked in the survey.</dd>
         <dt>Goal</dt><dd>Residents in both cities see and feel tourism's value, measurable in the next survey wave.</dd>
         <dt>Who is affected</dt><dd>Anaheim and Garden Grove residents; Marketing leadership; Communications; partners offering resident discounts; the BI team that tracks results.</dd>
       </dl>
     </div>
-    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Decision guide"><button type="button" class="rs-subchip" data-subgo="decision-p1">Weighted decision matrix</button><button type="button" class="rs-subchip" data-subgo="decision-respond">Respond and decide</button><button type="button" class="rs-subchip" data-subgo="decision-p2">Overlooked options and devil&#x27;s advocate</button><button type="button" class="rs-subchip" data-subgo="decision-p3">Recommendation</button><button type="button" class="rs-subchip" data-subgo="decision-p4">Assumptions to verify</button></nav>
-    <div class="rs-sub" id="decision-p1" data-sub-title="Weighted decision matrix">
+    <nav class="rs-subnav" data-pdf-skip aria-label="Pages in Decision guide"><button type="button" class="rs-subchip" data-subgo="decision-p1">Decision matrix</button><button type="button" class="rs-subchip" data-subgo="decision-respond">Respond and decide</button><button type="button" class="rs-subchip" data-subgo="decision-p2">Overlooked options and devil&#x27;s advocate</button><button type="button" class="rs-subchip" data-subgo="decision-p3">What the data shows</button><button type="button" class="rs-subchip" data-subgo="decision-p4">Assumptions to verify</button></nav>
+    <div class="rs-sub" id="decision-p1" data-sub-title="Decision matrix">
     <div class="rs-block">
-      <h3 class="rs-h3">Weighted decision matrix</h3>
-      <p class="rs-cap">Scores 1–5 (5 = best). Weighted total = sum of weight × score, out of 5. Select an option row to see the reasoning behind each score.</p>
-      <div class="rs-viz" id="decision-chart" data-draw="dchart" data-source="decision_totals"></div>
+      <h3 class="rs-h3">Decision matrix: options and survey evidence</h3>
+      <p class="rs-cap">Each cell shows the survey evidence for that option and criterion. Weights and 1–5 scores are not pre-filled because they are judgment, not survey data: set them on the Respond and decide page to rank the options. Cost and effort need Marketing's budget, timeline and team capacity.</p>
       <div class="rs-scroll"><table class="rs-tbl" id="decision-matrix"><thead data-draw="dmhead"></thead><tbody data-draw="dmbody"></tbody></table></div>
-      <div class="rs-block" id="decision-reasons" data-draw="dreasons" data-source="decision"></div>
     </div>
     </div>
     <div class="rs-sub" id="decision-respond" data-sub-title="Respond and decide" hidden>
@@ -710,25 +708,26 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       <div class="rs-block">
         <h3 class="rs-h3">Options you may have overlooked</h3>
         <ul class="rs-list">
-          <li><strong>Fix measurement first</strong> (scored above): resolve the two vendor reporting errors, align Garden Grove and Anaheim wording, and add weighting before the next wave.</li>
+          <li><strong>Fix measurement first</strong> (in the matrix): resolve the two vendor reporting errors, align Garden Grove and Anaheim wording, and add weighting before the next wave.</li>
           <li><strong>Combine the top two</strong>: deliver the Anaheim proof points through a regular resident email and text channel, so one program serves both.</li>
           <li><strong>Pilot before scaling</strong>: test resident messaging in one Anaheim area with a pre and post pulse before a citywide rollout.</li>
         </ul>
       </div>
       <div class="rs-block">
-        <h3 class="rs-h3">Devil's advocate on the top choice</h3>
+        <h3 class="rs-h3">Devil's advocate</h3>
         <ul class="rs-list">
           <li>Personal benefit has stayed near <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=personal">—</span>%</span> for four waves even as awareness of benefits rose to <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=ben_aware">—</span>%</span>. More information alone may not change how residents feel; tangible value such as discounts may matter more.</li>
           <li>Whether residents feel valued over visitors may depend on factors beyond Visit Anaheim's communications.</li>
           <li>The Wave 4 gains came with a vendor change, so part of the improvement could reflect method rather than real change.</li>
-          <li>Without a budget or timeline, the cost score is a guess; a content program could cost more than the discount program it outranks.</li>
+          <li>The survey does not measure cost or effort. Until Marketing's budget, timeline and team capacity are known, options can't be compared on cost.</li>
         </ul>
       </div>
     </div>
     </div>
-    <div class="rs-sub" id="decision-p3" data-sub-title="Recommendation" hidden>
+    <div class="rs-sub" id="decision-p3" data-sub-title="What the data shows" hidden>
     <div class="rs-note" id="decision-summary">
-      <p><strong>Recommendation in three sentences.</strong> Lead with Option 1, <span data-draw="dtop" data-source="decision_totals">—</span>, because the survey shows Anaheim residents increasingly know tourism's benefits but still don't feel valued (<span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=values_res">—</span>%</span>, down from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-BL&amp;kpi_id=values_res">—</span>%</span>). Deliver it through the resident email and text channel residents prefer, which also answers the demand for development updates in both cities. In parallel, fix the measurement issues so the next wave can show whether it worked, and confirm the Garden Grove shifts before investing heavily there.</p>
+      <p><strong>What the data shows for this decision.</strong> In Anaheim, more residents know how tourism benefits them (<span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=ben_aware">—</span>%</span> in Wave 4, up from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W3&amp;kpi_id=ben_aware">—</span>%</span> in Wave 3), but fewer feel the city values residents over visitors (<span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=values_res">—</span>%</span>, down from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-BL&amp;kpi_id=values_res">—</span>%</span> at baseline). In Garden Grove, more residents feel tourism benefits them and their family (<span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=personal">—</span>%</span>, up from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W1&amp;kpi_id=personal">—</span>%</span>), while awareness of Visit Anaheim fell (<span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=va_aware">—</span>%</span>, from <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W1&amp;kpi_id=va_aware">—</span>%</span>). Residents in both cities would appreciate resident discounts (<span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=ANA-W4&amp;kpi_id=discounts">—</span>%</span> Anaheim, <span class="rs-num"><span data-draw="v" data-source="kpis" data-field="value_pct" data-where="wave_id=GG-W2&amp;kpi_id=discounts">—</span>%</span> Garden Grove).</p>
+      <p>A ranked recommendation appears on the Respond and decide page once you set the weights and scores.</p>
     </div>
     </div>
     <div class="rs-sub" id="decision-p4" data-sub-title="Assumptions to verify" hidden>
@@ -736,10 +735,10 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
       <h3 class="rs-h3">Assumptions to verify with your own data</h3>
       <ul class="rs-list">
         <li>The decision framing and options come from Marketing's Nov 9 next steps; confirm they match what Marketing is actually deciding.</li>
-        <li>Cost scores assume existing email, social and eNewsletter tools; replace them once budget and team capacity are known.</li>
+        <li>Cost and effort: the survey can't answer these. Marketing's budget, timeline and team capacity are needed.</li>
         <li>Visit Anaheim has resident email and text lists large enough to reach residents at scale.</li>
         <li>The Wave 4 Anaheim gains and Garden Grove swings are real change, not method effects (vendor confirmations pending).</li>
-        <li>Weights are starting points; adjust them on the Respond and decide page and the ranking will recalculate.</li>
+        <li>Weights and scores are yours to set on the Respond and decide page; the ranking follows them.</li>
       </ul>
     </div>
     </div>
@@ -1426,56 +1425,18 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
   });
 
   /* ---------- decision guide ---------- */
-  dash.calc('decision_totals', {
-    title: 'Weighted decision totals', description: 'Sum of weight times score for each option, out of 5, with rank.', inputs: ['decision'],
-    fn: (decision) => {
-      const by = {};
-      decision.forEach((r) => { const o = by[r.option_id] || (by[r.option_id] = {option_id: r.option_id, option: r.option, weighted_total: 0}); o.weighted_total += (+r.weight_pct) * (+r.score) / 100; });
-      const rows = Object.values(by).map((o) => Object.assign(o, {weighted_total: Math.round(o.weighted_total * 100) / 100})).sort((a, b) => b.weighted_total - a.weighted_total);
-      rows.forEach((o, i) => { o.rank = i + 1; });
-      return rows;
-    }
-  });
-  dash.draw('dtop', (el) => { const d = dash.data('decision_totals'); if (d.status !== 'ok' || !d.data || !d.data.length) { el.textContent = '—'; return; } el.textContent = d.data[0].option.toLowerCase(); });
-  dash.draw('dchart', (host) => {
-    const d = dash.data('decision_totals'); if (d.status !== 'ok' || !d.data) { notReady(host, d.status); return; }
-    host.replaceChildren(); const anim = firstTime(host);
-    const rows = d.data, Wd = host.clientWidth || 600, rowH = 34, H = rows.length * rowH + 24;
-    const svg = d3.select(host).append('svg').attr('width', Wd).attr('height', H).attr('role', 'img').attr('aria-label', 'Weighted totals: ' + rows.map((r) => r.option + ' ' + r.weighted_total).join('; '));
-    const labs = rows.map((r, i) => svg.append('text').attr('y', i * rowH + 21).attr('text-anchor', 'end').attr('class', 'rs-axis').text(r.rank + '. ' + r.option));
-    const widest = Math.max(0, ...labs.map((t) => t.node().getComputedTextLength())), lw = Math.min(widest + 14, Math.floor(Wd * 0.55));
-    labs.forEach((t) => { t.attr('x', lw - 8); fitText(t.node(), lw - 12); });
-    const x = d3.scaleLinear([0, 5], [lw, Wd - 50]);
-    [1, 2, 3, 4, 5].forEach((v) => { svg.append('line').attr('x1', x(v)).attr('x2', x(v)).attr('y1', 0).attr('y2', H - 18).style('stroke', 'var(--cds-chart-grid)'); svg.append('text').attr('class', 'rs-axis').attr('x', x(v)).attr('y', H - 4).attr('text-anchor', 'middle').text(v); });
-    rows.forEach((r, i) => {
-      const b = svg.append('rect').attr('x', lw).attr('y', i * rowH + 8).attr('height', 18).style('fill', i === 0 ? dash.colors[0] : 'var(--cds-chart-muted)');
-      if (anim) b.attr('width', 0).transition().delay(i * 120).duration(800).ease(d3.easeCubicOut).attr('width', x(r.weighted_total) - lw); else b.attr('width', x(r.weighted_total) - lw);
-      const t = svg.append('text').attr('class', 'rs-vlab').attr('x', x(r.weighted_total) + 6).attr('y', i * rowH + 21);
-      t.append('tspan').attr('data-source', 'decision_totals').attr('data-field', 'weighted_total').attr('data-where', 'option_id=' + enc(r.option_id)).text(r.weighted_total.toFixed(2));
-      b.style('cursor', 'pointer').on('click', (ev) => window.__rsXP(host, ev, [r.rank + '. ' + r.option, 'Weighted total ' + r.weighted_total.toFixed(2) + ' of 5 with the guide\u2019s starting weights', 'Respond and decide lets you change the weights.']));
-    });
-  });
+  function decCrit(d) { return Array.from(new Map(d.data.map((r) => [r.criterion_id, r])).values()); }
+  function decOpts(d) { return Array.from(new Map(d.data.map((r) => [r.option_id, r])).values()); }
   dash.draw('dmhead', (th) => {
     const d = dash.data('decision'); if (d.status !== 'ok') { th.replaceChildren(); return; }
-    const crit = Array.from(new Map(d.data.map((r) => [r.criterion_id, r])).values());
-    th.replaceChildren(h('tr', null, h('th', null, 'Option'), ...crit.map((c) => h('th', {class: 'n'}, c.criterion + ' (', mark('decision', 'weight_pct', 'row_id=' + enc(d.data.find((r) => r.criterion_id === c.criterion_id).row_id), c.weight_pct), '%)')), h('th', {class: 'n'}, 'Weighted total')));
+    th.replaceChildren(h('tr', null, h('th', null, 'Option'), ...decCrit(d).map((c) => h('th', null, c.criterion))));
   });
   dash.draw('dmbody', (tb) => {
-    const d = dash.data('decision'), t = dash.data('decision_totals'); if (d.status !== 'ok' || t.status !== 'ok' || !t.data) { tb.replaceChildren(); return; }
-    const crit = Array.from(new Map(d.data.map((r) => [r.criterion_id, r])).values()).map((r) => r.criterion_id);
-    tb.replaceChildren(...t.data.map((o, i) => h('tr', {class: i === 0 ? 'top' : null}, h('td', null, o.rank + '. ' + o.option),
-      ...crit.map((c) => { const r = d.data.find((x) => x.option_id === o.option_id && x.criterion_id === c); return h('td', {class: 'n'}, mark('decision', 'score', 'row_id=' + enc(r.row_id), r.score)); }),
-      h('td', {class: 'n'}, mark('decision_totals', 'weighted_total', 'option_id=' + enc(o.option_id), o.weighted_total.toFixed(2))))));
-  });
-  dash.draw('dreasons', (host) => {
-    const d = dash.data('decision'); if (d.status !== 'ok') { notReady(host, d.status); return; }
-    const opts = Array.from(new Map(d.data.map((r) => [r.option_id, r])).values());
-    host.replaceChildren(...opts.map((o) => {
-      const det = h('details', {class: 'rs-details', id: 'reason-' + o.option_id}, h('summary', null, o.option_id.replace('O', 'Option ') + ': ' + o.option));
-      det.append(h('p', {class: 'rs-cap'}, o.option_detail));
-      det.append(h('ul', {class: 'rs-list rs-cap'}, ...d.data.filter((r) => r.option_id === o.option_id).map((r) => h('li', null, h('strong', null, r.criterion + ': '), mark('decision', 'score', 'row_id=' + enc(r.row_id), r.score), '/5. ' + r.reasoning))));
-      return det;
-    }));
+    const d = dash.data('decision'); if (d.status !== 'ok') { tb.replaceChildren(); return; }
+    const crit = decCrit(d).map((c) => c.criterion_id);
+    tb.replaceChildren(...decOpts(d).map((o) => h('tr', null,
+      h('td', null, h('strong', null, o.option_id.replace('O', 'Option ') + ': ' + o.option), h('div', {class: 'rs-cap'}, o.option_detail)),
+      ...crit.map((c) => { const r = d.data.find((x) => x.option_id === o.option_id && x.criterion_id === c); return h('td', {class: 'rs-cap'}, r ? mark('decision', 'evidence', 'row_id=' + enc(r.row_id), r.evidence) : 'No evidence row'); }))));
   });
 
   /* ---------- city comparison ---------- */
@@ -1605,7 +1566,7 @@ html,body{margin:0;background:var(--color-bg);color:var(--color-fg)}#dash-root{m
   const KEY = 'rs-gif-hidden', say = (t) => { stat.textContent = t; };
   function set(hide) {
     fig.hidden = hide; note.hidden = !hide;
-    tg.textContent = hide ? 'Show animation' : 'Hide animation';
+    tg.querySelectorAll('.gif-lab-hide').forEach((s) => { s.hidden = hide; }); tg.querySelectorAll('.gif-lab-show').forEach((s) => { s.hidden = !hide; });
     tg.setAttribute('aria-pressed', hide ? 'true' : 'false');
     try { localStorage.setItem(KEY, hide ? '1' : '0'); } catch (e) {}
   }
